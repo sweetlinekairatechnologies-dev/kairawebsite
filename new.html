@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plexify – About Section</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=Barlow:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { background: #0a0a0a; }
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+  background: linear-gradient(180deg, #0f1f08 0%, #141414 12%, #0a0a0a 100%);
+  position: relative;
+  overflow: visible;
+}
+
+/* ================= ORANGE BLOB ================= */
+.o-blob {
+  position: fixed;         /* fixed so it stays with the video */
+  left: -45px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb300, #ff4500);
+  box-shadow:
+    0 0 40px rgba(255,140,0,0.7),
+    0 0 80px rgba(255,80,0,0.5);
+  animation: blobF 3.4s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes blobF {
+  0%,100% { transform: translateY(-50%) scale(1);    opacity: 1;   }
+  50%      { transform: translateY(-55%) scale(1.08); opacity: .85; }
+}
+
+/* ================= LAYOUT ================= */
+.about-cols {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 80px 52px 120px;
+  gap: 0;
+}
+
+/* ─────────────────────────────────────────
+   LEFT PLACEHOLDER
+   Takes up space in the flow so right
+   content doesn't overlap the fixed video
+───────────────────────────────────────── */
+.ab-left-placeholder {
+  width: 42%;
+  flex-shrink: 0;
+  padding-right: 44px;
+  /* invisible — just holds the column width */
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Same height as img-card so layout matches */
+.ab-left-placeholder::after {
+  content: '';
+  display: block;
+  height: 500px;
+}
+
+/* ─────────────────────────────────────────
+   LEFT VIDEO — position: fixed
+   NEVER moves regardless of scroll
+───────────────────────────────────────── */
+.ab-left-fixed {
+  position: fixed;
+  top: 90px;               /* distance from top of viewport */
+  left: 52px;              /* matches section padding */
+  width: calc(42% - 44px - 52px); /* same visual width as placeholder */
+  z-index: 10;
+}
+
+.img-card {
+  width: 100%;
+  height: 500px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 28px 72px rgba(0,0,0,.6);
+}
+
+.img-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: saturate(.45) hue-rotate(72deg) brightness(.78);
+}
+
+/* ─────────────────────────────────────────
+   RIGHT CONTENT — scrolls normally
+───────────────────────────────────────── */
+.ab-right {
+  flex: 1;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  padding-left: 8px;
+}
+
+/* ================= STATS ================= */
+.stats-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 44px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.stat-num {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  font-size: clamp(64px, 9vw, 100px);
+  color: #aaee33;
+  line-height: 1;
+  letter-spacing: -3px;
+}
+
+.stat-lbl {
+  font-style: italic;
+  font-size: 16px;
+  color: rgba(255,255,255,.48);
+  line-height: 1.55;
+  margin-top: 6px;
+}
+
+/* ================= ROTATING BADGE ================= */
+.rot-badge {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #aaee33;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 10px;
+  margin-left: 40px;
+  box-shadow:
+    0 0 25px rgba(66,73,55,0.35),
+    0 0 60px rgba(170,238,51,0.15);
+}
+
+.badge-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 160px; height: 160px;
+  animation: spin 10s linear infinite;
+}
+
+.badge-ring text {
+  font-size: 9.8px;
+  fill: #aaee33;
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+@keyframes spin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+.badge-arrow {
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: #aaee33;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow:
+    0 0 12px rgba(170,238,51,0.6),
+    0 0 30px rgba(170,238,51,0.35);
+}
+
+.badge-arrow svg { width: 24px; height: 24px; stroke: #000; }
+
+/* ================= HEADING ================= */
+.build-h {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 800;
+  font-size: clamp(34px, 4.8vw, 58px);
+  line-height: 1.06;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.build-h .gc { color: #aaee33; }
+
+.build-p {
+  font-size: 17px;
+  line-height: 1.82;
+  color: rgba(255,255,255,.46);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+
+/* ================= SERVICE CARDS ================= */
+.svc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.svc-card {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 30px 24px;
+  transition: border-color .3s, transform .3s;
+  cursor: default;
+}
+
+.svc-card:hover {
+  border-color: rgba(170,238,51,.3);
+  transform: translateY(-6px);
+}
+
+.svc-ico {
+  width: 50px; height: 50px;
+  color: #aaee33;
+  margin-bottom: 16px;
+}
+
+.svc-t {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  color: #fff;
+  line-height: 1.25;
+}
+
+.svc-learn {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: #aaee33;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+
+.svc-learn:hover { opacity: .7; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 991px) {
+  .ab-left-fixed {
+    position: relative;
+    top: auto; left: auto;
+    width: 100%;
+  }
+  .ab-left-placeholder { display: none; }
+  .about-cols {
+    flex-direction: column;
+    padding: 40px 20px 60px;
+  }
+  .img-card { height: 60vw; min-height: 260px; }
+  .ab-right { padding: 24px 0 40px; }
+  .o-blob { position: absolute; width: 100px; height: 100px; left: -30px; }
+}
+
+@media (max-width: 575px) {
+  .stat-num  { font-size: 52px; }
+  .svc-grid  { grid-template-columns: 1fr; }
+  .stats-row { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<section class="about-section" id="about">
+
+  <!-- orange glow blob -->
+  <div class="o-blob"></div>
+
+  <!-- ══ FIXED VIDEO — sits outside the flex flow, never moves ══ -->
+  <div class="ab-left-fixed">
+    <div class="img-card">
+      <video class="img-photo" autoplay muted loop playsinline>
+        <source src="videoplayback.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <div class="about-cols">
+
+    <!-- invisible placeholder — holds left column space in layout -->
+    <div class="ab-left-placeholder"></div>
+
+    <!-- ══ RIGHT CONTENT — scrolls normally ══ -->
+    <div class="ab-right">
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div>
+          <div class="stat-num">120k</div>
+          <div class="stat-lbl">Active members<br>inside the program</div>
+        </div>
+        <div>
+          <div class="stat-num">72+</div>
+          <div class="stat-lbl">of customers are<br>repeat customers</div>
+        </div>
+        <div class="rot-badge">
+          <svg class="badge-ring" viewBox="0 0 104 104">
+            <defs>
+              <path id="cp" d="M52,52 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/>
+            </defs>
+            <text font-size="9.8" fill="#aaee33"
+              font-family="Big Shoulders Display,sans-serif"
+              font-weight="700" letter-spacing="2.8">
+              <textPath href="#cp">TOGETHER•LET'S•WORK•</textPath>
+            </text>
+          </svg>
+          <div class="badge-arrow">
+            <svg viewBox="0 0 18 18" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round">
+              <path d="M4 14L14 4M14 4H7M14 4V11"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="build-h">Lets build with <span class="gc">Plexify</span></h2>
+      <p class="build-p">Empower your brand with cutting-edge digital solutions, drive
+        engagement, and accelerate growth with our innovative marketing strategies.</p>
+
+      <!-- 2×2 service cards -->
+      <div class="svc-grid">
+
+        <div class="svc-card">
+          <div class="svc-ico">
+            <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="26" cy="26" r="20"/>
+              <path d="M26 13v26M21 18.5s0-4 5-4 5 4 5 4-1.5 5-5 5-5 5-5 5 0 4 5 4 5-4 5-4"/>
+            </svg>
+          </div>
+          <div class="svc-t">Paid Search<br>Marketing</div>
+          <a href="#" class="svc-learn">Learn more</a>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-ico">
+            <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="26" cy="26" r="7"/>
+              <path d="M26 6v6M26 40v6M6 26h6M40 26h6M11.5 11.5l4.2 4.2M36.3 36.3l4.2 4.2M11.5 40.5l4.2-4.2M36.3 15.7l4.2-4.2"/>
+            </svg>
+          </div>
+          <div class="svc-t">Client-Centric<br>Approach</div>
+          <a href="#" class="svc-learn">Learn more</a>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-ico">
+            <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+              <circle cx="26" cy="26" r="20"/>
+              <circle cx="26" cy="26" r="10"/>
+              <circle cx="26" cy="26" r="3" fill="currentColor" stroke="none"/>
+              <line x1="26" y1="6"  x2="26" y2="16"/>
+              <line x1="26" y1="36" x2="26" y2="46"/>
+              <line x1="6"  y1="26" x2="16" y2="26"/>
+              <line x1="36" y1="26" x2="46" y2="26"/>
+            </svg>
+          </div>
+          <div class="svc-t">Leadership<br>Development</div>
+          <a href="#" class="svc-learn">Learn more</a>
+        </div>
+
+        <div class="svc-card">
+          <div class="svc-ico">
+            <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="26" cy="10" r="5"/>
+              <circle cx="10" cy="36" r="5"/>
+              <circle cx="42" cy="36" r="5"/>
+              <circle cx="26" cy="26" r="5"/>
+              <line x1="26" y1="15" x2="26" y2="21"/>
+              <line x1="26" y1="31" x2="12" y2="33"/>
+              <line x1="26" y1="31" x2="40" y2="33"/>
+              <line x1="15" y1="36" x2="37" y2="36"/>
+            </svg>
+          </div>
+          <div class="svc-t">Conversion<br>Rate</div>
+          <a href="#" class="svc-learn">Learn more</a>
+        </div>
+
+      </div>
+
+    </div><!-- /ab-right -->
+  </div>
+
+</section>
+
+<script>
+  // ── Dynamically match ab-left-fixed width to the actual placeholder width ──
+  function syncVideoPosition() {
+    const placeholder = document.querySelector('.ab-left-placeholder');
+    const fixed       = document.querySelector('.ab-left-fixed');
+    if (!placeholder || !fixed) return;
+
+    const rect = placeholder.getBoundingClientRect();
+    // Use the placeholder's actual rendered position and width
+    fixed.style.left  = rect.left + 'px';
+    fixed.style.width = (rect.width - 44) + 'px'; // subtract padding-right
+  }
+
+  window.addEventListener('load',   syncVideoPosition);
+  window.addEventListener('resize', syncVideoPosition);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plexify – Hero</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fonts: Big Shoulders Display (condensed heavy) + Fraunces (deep serif italic) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;800;900&family=Fraunces:ital,opsz,wght@1,9..144,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cdot"></div>
+  <div id="cring"></div>
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav class="gnav" id="gnav">
+
+    <!-- Logo / Menu pill -->
+    <div class="logo-pill">
+      <div class="logo-ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+      </div>
+      <div class="menu-lines" aria-label="Menu">
+        <span></span><span></span>
+      </div>
+      <span class="logo-sep">|</span>
+      Menu
+    </div>
+
+    <!-- Let's talk (desktop) -->
+    <a href="#" class="talk-btn">
+      Let's talk
+      <div class="talk-arrow"></div>
+    </a>
+
+    <!-- Hamburger (mobile ≤991px) -->
+    <button class="nav-mobile-toggle" aria-label="Open menu">
+      <div class="mlines"><span></span><span></span></div>
+    </button>
+
+  </nav>
+
+  <section class="hero" id="hero">
+
+    <!-- ── Wavy decorators ── -->
+    <!-- top-left: triple wave -->
+    <div class="wv wv-tl">
+      <svg viewBox="0 0 100 56" width="100">
+        <path d="M0 14 C12 3,  24 25, 36 14 C48 3,  60 25, 72 14 C84 3, 100 25,100 14" stroke-width="3.2" />
+        <path d="M0 28 C12 17, 24 39, 36 28 C48 17, 60 39, 72 28 C84 17,100 39,100 28" stroke-width="3.2" />
+        <path d="M0 42 C12 31, 24 53, 36 42 C48 31, 60 53, 72 42 C84 31,100 53,100 42" stroke-width="3.2" />
+      </svg>
+    </div>
+
+    <!-- top-right: single sweep -->
+    <div class="wv wv-tr">
+      <svg viewBox="0 0 80 50" width="72">
+        <path d="M10 42 Q20 5 40 28 Q60 50 70 10" stroke-width="3.2" />
+      </svg>
+    </div>
+
+    <!-- bottom-left: small dot + single wave -->
+    <div class="wv wv-bl" style="opacity:.45">
+      <svg viewBox="0 0 60 36" width="60">
+        <circle cx="6" cy="6" r="5" fill="rgba(0,0,0,.3)" stroke="none" />
+        <path d="M0 26 C8 15, 18 37, 28 26 C38 15, 48 37, 60 26" stroke-width="2.8" />
+      </svg>
+    </div>
+
+    <!-- bottom-right: triple wave (mirrored via CSS scaleX) -->
+    <div class="wv wv-br">
+      <svg viewBox="0 0 90 56" width="82">
+        <path d="M0 14 C12 3,  24 25, 36 14 C48 3,  60 25, 72 14 C84 3, 90 25, 90 14" stroke-width="3.2" />
+        <path d="M0 28 C12 17, 24 39, 36 28 C48 17, 60 39, 72 28 C84 17, 90 39, 90 28" stroke-width="3.2" />
+        <path d="M0 42 C12 31, 24 53, 36 42 C48 31, 60 53, 72 42 C84 31, 90 53, 90 42" stroke-width="3.2" />
+      </svg>
+    </div>
+
+    <!-- ── ROW 1: WE | ARE A | digital ── -->
+    <div class="h-row1">
+      <div class="h-we"><span>WE</span></div>
+      <div class="h-area"><span>ARE</span><span>A</span></div>
+      <div class="h-digital"><span>digital</span></div>
+    </div>
+
+    <!-- ── ROW 2: marketing AGENCY ── -->
+    <div class="h-row2">
+      <div class="h-marketing"><span>marketing</span></div>
+      <div class="h-agency"><span>AGENCY</span></div>
+    </div>
+
+    <!-- ── TAG BOX ── -->
+    <div class="tagbox d-none d-lg-block">
+      <div class="tagbox-inner">
+        <span class="tb-brace">{</span>
+        <span>Boost Your Brand with Cutting-Edge Digital Marketing!</span>
+        <span class="tb-brace right">}</span>
+      </div>
+    </div>
+
+    <!-- ── Scroll hint ── -->
+    <div class="scroll-hint">
+      <span class="sh-txt">Scroll</span>
+      <div class="sh-bar"></div>
+    </div>
+
+  </section>
+
+
+  <!-- about started -->
+  <section class="about-section" id="about">
+
+    <!-- orange glow blob -->
+    <div class="o-blob"></div>
+
+    <div class="about-cols">
+
+      <!-- left column holding fixed video -->
+      <div class="ab-left-placeholder">
+        <div class="ab-left-fixed">
+          <div class="img-card">
+            <video class="img-photo" autoplay muted loop playsinline>
+              <source src="videoplayback.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ RIGHT CONTENT — scrolls normally ══ -->
+      <div class="ab-right">
+
+        <!-- Stats -->
+        <div class="stats-row">
+          <div>
+            <div class="stat-num">120k</div>
+            <div class="stat-lbl">Active members<br>inside the program</div>
+          </div>
+          <div>
+            <div class="stat-num">72+</div>
+            <div class="stat-lbl">of customers are<br>repeat customers</div>
+          </div>
+          <div class="rot-badge">
+            <svg class="badge-ring" viewBox="0 0 104 104">
+              <defs>
+                <path id="cp" d="M52,52 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+              </defs>
+              <text font-size="9.8" fill="#aaee33" font-family="Big Shoulders Display,sans-serif" font-weight="700"
+                letter-spacing="2.8">
+                <textPath href="#cp">TOGETHER•LET'S•WORK•</textPath>
+              </text>
+            </svg>
+            <div class="badge-arrow">
+              <svg viewBox="0 0 18 18" fill="none" stroke="#000" stroke-width="2.4" stroke-linecap="round">
+                <path d="M4 14L14 4M14 4H7M14 4V11" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heading -->
+        <h2 class="build-h">Lets build with <span class="gc">Plexify</span></h2>
+        <p class="build-p">Empower your brand with cutting-edge digital solutions, drive
+          engagement, and accelerate growth with our innovative marketing strategies.</p>
+
+        <!-- 2×2 service cards -->
+        <div class="svc-grid">
+
+          <div class="svc-card">
+            <div class="svc-ico">
+              <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="26" cy="26" r="20" />
+                <path d="M26 13v26M21 18.5s0-4 5-4 5 4 5 4-1.5 5-5 5-5 5-5 5 0 4 5 4 5-4 5-4" />
+              </svg>
+            </div>
+            <div class="svc-t">Paid Search<br>Marketing</div>
+            <a href="#" class="svc-learn">Learn more</a>
+          </div>
+
+          <div class="svc-card">
+            <div class="svc-ico">
+              <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="26" cy="26" r="7" />
+                <path
+                  d="M26 6v6M26 40v6M6 26h6M40 26h6M11.5 11.5l4.2 4.2M36.3 36.3l4.2 4.2M11.5 40.5l4.2-4.2M36.3 15.7l4.2-4.2" />
+              </svg>
+            </div>
+            <div class="svc-t">Client-Centric<br>Approach</div>
+            <a href="#" class="svc-learn">Learn more</a>
+          </div>
+
+          <div class="svc-card">
+            <div class="svc-ico">
+              <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                <circle cx="26" cy="26" r="20" />
+                <circle cx="26" cy="26" r="10" />
+                <circle cx="26" cy="26" r="3" fill="currentColor" stroke="none" />
+                <line x1="26" y1="6" x2="26" y2="16" />
+                <line x1="26" y1="36" x2="26" y2="46" />
+                <line x1="6" y1="26" x2="16" y2="26" />
+                <line x1="36" y1="26" x2="46" y2="26" />
+              </svg>
+            </div>
+            <div class="svc-t">Leadership<br>Development</div>
+            <a href="#" class="svc-learn">Learn more</a>
+          </div>
+
+          <div class="svc-card">
+            <div class="svc-ico">
+              <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="26" cy="10" r="5" />
+                <circle cx="10" cy="36" r="5" />
+                <circle cx="42" cy="36" r="5" />
+                <circle cx="26" cy="26" r="5" />
+                <line x1="26" y1="15" x2="26" y2="21" />
+                <line x1="26" y1="31" x2="12" y2="33" />
+                <line x1="26" y1="31" x2="40" y2="33" />
+                <line x1="15" y1="36" x2="37" y2="36" />
+              </svg>
+            </div>
+            <div class="svc-t">Conversion<br>Rate</div>
+            <a href="#" class="svc-learn">Learn more</a>
+          </div>
+
+        </div>
+
+      </div><!-- /ab-right -->
+    </div>
+
+  </section>
+
+<!-- about finished -->
+
+ <!-- Custom cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-trail" id="cursorTrail"></div>
+
+
+    <!-- Horizontal scroll section -->
+    <div class="sticky-outer" id="stickyOuter">
+        <div class="sticky-pin" id="stickyPin">
+
+            <div class="section-header">
+               
+                <div style="text-align:right;">
+                    <div class="progress-bar-wrap">
+                        <div class="progress-bar-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-count" id="progressCount">01 / 06</div>
+                </div>
+            </div>
+
+            <div class="cards-viewport">
+                <div class="cards-track" id="cardsTrack">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <img class="card-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+                            alt="Project 1">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">01</div>
+                        <div class="card-chip">Branding</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Luminary Brand Identity</div>
+                            <div class="card-desc">Complete visual overhaul for a luxury fintech startup seeking bold
+                                market presence.</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <img class="card-bg"
+                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+                            alt="Project 2">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">02</div>
+                        <div class="card-chip">Web Design</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Nexus Digital Platform</div>
+                            <div class="card-desc">Award-winning SaaS platform design with seamless UX flows and
+                                micro-animations.</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <img class="card-bg"
+                            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80"
+                            alt="Project 3">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">03</div>
+                        <div class="card-chip">Motion</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Velocity Motion Reel</div>
+                            <div class="card-desc">Cinematic motion graphics campaign for a global sports apparel
+                                launch.</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card">
+                        <img class="card-bg"
+                            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
+                            alt="Project 4">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">04</div>
+                        <div class="card-chip">Strategy</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Apex Growth Engine</div>
+                            <div class="card-desc">Data-driven marketing strategy that scaled a D2C brand to 8-figure
+                                revenue.</div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="card">
+                        <img class="card-bg"
+                            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80"
+                            alt="Project 5">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">05</div>
+                        <div class="card-chip">Development</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Orbital App Ecosystem</div>
+                            <div class="card-desc">End-to-end product engineering for a real-time collaboration suite.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="card">
+                        <img class="card-bg"
+                            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80"
+                            alt="Project 6">
+                        <div class="card-overlay"></div>
+                        <div class="card-number">06</div>
+                        <div class="card-chip">Campaign</div>
+                        <div class="card-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <line x1="5" y1="12" x2="19" y2="12" />
+                                <polyline points="12 5 19 12 12 19" />
+                            </svg>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Echo Social Campaign</div>
+                            <div class="card-desc">Viral multi-platform campaign reaching 40M impressions in the first
+                                week.</div>
+                        </div>
+                    </div>
+
+                </div><!-- /cards-track -->
+            </div><!-- /cards-viewport -->
+
+            <!-- Mobile dots -->
+            <div class="mobile-dots" id="mobileDots">
+                <div class="mobile-dot active" data-idx="0"></div>
+                <div class="mobile-dot" data-idx="1"></div>
+                <div class="mobile-dot" data-idx="2"></div>
+                <div class="mobile-dot" data-idx="3"></div>
+                <div class="mobile-dot" data-idx="4"></div>
+                <div class="mobile-dot" data-idx="5"></div>
+            </div>
+
+            <!-- Mobile nav -->
+            <div class="mobile-nav" id="mobileNav">
+                <button class="mobile-nav-btn disabled" id="prevBtn" aria-label="Previous">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                </button>
+                <span class="mobile-card-label" id="mobileCount">01 / 06</span>
+                <button class="mobile-nav-btn" id="nextBtn" aria-label="Next">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                </button>
+            </div>
+
+        </div><!-- /sticky-pin -->
+    </div><!-- /sticky-outer -->
+
+<!-- work finished -->
+
+
+
+
+<section class="seo-section">
+    <div class="container-fluid px-4 px-lg-5">
+
+      <!-- TOP ROW -->
+      <div class="top-row">
+
+        <h1 class="main-heading">
+          Find Our Best<br>Services
+        </h1>
+
+        <div class="top-badge">
+          <span class="brace">{</span>
+          <p class="badge-text">Achieve Top Rankings with<br>Cutting-Edge SEO Services!</p>
+          <span class="brace">}</span>
+        </div>
+
+        <div class="arrow-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ROW -->
+      <div class="bottom-row">
+
+        <div class="left-col">
+          <!-- 3-D Sticky Graphic -->
+          <div class="seo-graphic-wrap">
+            <span class="seo-3d" id="stickyText">SEO</span>
+            <div class="rocket-img" id="stickyEmoji">🚀</div>
+          </div>
+
+          <!-- Card 1 -->
+          <div class="service-card" data-text="SEO" data-emoji="🚀">
+            <span class="seo-pill">SEO</span>
+            <h2 class="card-title-main">Search Engine Optimization</h2>
+            <ul class="features">
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                On-page and off-page SEO
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Keyword research and optimization
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Technical SEO
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Link building
+              </li>
+            </ul>
+            <a href="#" class="view-btn">
+              View Details
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+            </a>
+            <div class="card-corner">
+              <span class="corner-seo">SEO</span>
+              <span class="corner-rocket">🚀</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scrollable Cards List -->
+        <div class="right-col services-list">
+
+          <!-- Card 2 -->
+          <div class="service-card" data-text="EMAIL" data-emoji="📧">
+            <span class="seo-pill">Email Campaign</span>
+            <h2 class="card-title-main">Email Marketing</h2>
+            <ul class="features">
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Email campaign design and automation
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Personalized email sequences
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Newsletter creation
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                List segmentation and lead nurturing
+              </li>
+            </ul>
+            <a href="#" class="view-btn">
+              View Details
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+            </a>
+            <div class="card-corner">
+              <span class="corner-seo" style="font-size: 1.8rem;">EMAIL</span>
+              <span class="corner-rocket">📧</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-text="SOCIAL" data-emoji="🤙">
+            <span class="seo-pill">Social media</span>
+            <h2 class="card-title-main">Social Media Marketing</h2>
+            <ul class="features">
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Community engagement
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Influencer marketing
+              </li>
+              <li>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                Paid social advertising
+              </li>
+            </ul>
+            <a href="#" class="view-btn">
+              View Details
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+            </a>
+            <div class="card-corner">
+              <span class="corner-seo" style="font-size: 1.6rem;">SOCIAL</span>
+              <span class="corner-rocket">🤙</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+ 
+  <!-- end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- next section -->
+ <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- set 1 -->
+      <div class="marquee-item"><span class="marquee-word">Analysis</span><span class="marquee-dot">🟠</span></div>
+      <div class="marquee-item"><span class="marquee-word">Research</span><span class="marquee-dot">⭐</span></div>
+      <div class="marquee-item"><span class="marquee-word">Reporting</span><span class="marquee-dot">🟡</span></div>
+      <div class="marquee-item"><span class="marquee-word muted">Optimization</span><span class="marquee-dot">🩷</span>
+      </div>
+      <div class="marquee-item"><span class="marquee-word">Strategy</span><span class="marquee-dot">🟢</span></div>
+      <div class="marquee-item"><span class="marquee-word">Branding</span><span class="marquee-dot">🔵</span></div>
+      <div class="marquee-item"><span class="marquee-word muted">Growth</span><span class="marquee-dot">🟠</span></div>
+      <div class="marquee-item"><span class="marquee-word">Engagement</span><span class="marquee-dot">⭐</span></div>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <div class="marquee-item"><span class="marquee-word">Analysis</span><span class="marquee-dot">🟠</span></div>
+      <div class="marquee-item"><span class="marquee-word">Research</span><span class="marquee-dot">⭐</span></div>
+      <div class="marquee-item"><span class="marquee-word">Reporting</span><span class="marquee-dot">🟡</span></div>
+      <div class="marquee-item"><span class="marquee-word muted">Optimization</span><span class="marquee-dot">🩷</span>
+      </div>
+      <div class="marquee-item"><span class="marquee-word">Strategy</span><span class="marquee-dot">🟢</span></div>
+      <div class="marquee-item"><span class="marquee-word">Branding</span><span class="marquee-dot">🔵</span></div>
+      <div class="marquee-item"><span class="marquee-word muted">Growth</span><span class="marquee-dot">🟠</span></div>
+      <div class="marquee-item"><span class="marquee-word">Engagement</span><span class="marquee-dot">⭐</span></div>
+    </div>
+  </div>
+<!-- finished -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ── Navbar scroll ── */
+    window.addEventListener('scroll', () => {
+      document.getElementById('gnav').classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* ── Custom cursor ── */
+    const cdot = document.getElementById('cdot');
+    const cring = document.getElementById('cring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    const lp = (a, b, t) => a + (b - a) * t;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function loop() {
+      cdot.style.left = mx + 'px'; cdot.style.top = my + 'px';
+      rx = lp(rx, mx, .1); ry = lp(ry, my, .1);
+      cring.style.left = rx + 'px'; cring.style.top = ry + 'px';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a, button, .logo-pill').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('ch'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('ch'));
+    });
+
+
+
+
+    // start works 
+
+
+    gsap.registerPlugin(ScrollTrigger);
+
+        const isMobile = () => window.innerWidth <= 900;
+
+        // ── Desktop horizontal scroll ──
+        function initDesktop() {
+            const track = document.getElementById('cardsTrack');
+            const outer = document.getElementById('stickyOuter');
+            const fill = document.getElementById('progressFill');
+            const count = document.getElementById('progressCount');
+            const cards = track.querySelectorAll('.card');
+
+            const getScrollAmount = () => {
+                const trackW = track.scrollWidth;
+                const viewW = track.parentElement.offsetWidth;
+                return -(trackW - viewW + 60);
+            };
+
+            ScrollTrigger.create({
+                trigger: outer,
+                start: 'top top',
+                end: () => `+=${Math.abs(getScrollAmount()) + window.innerHeight * 0.5}`,
+                pin: '#stickyPin',
+                scrub: 1,
+                anticipatePin: 1,
+                onUpdate: self => {
+                    const prog = self.progress;
+                    gsap.set(track, { x: getScrollAmount() * prog });
+                    fill.style.width = (prog * 100) + '%';
+                    const cardIdx = Math.min(Math.floor(prog * 6), 5);
+                    count.textContent = `0${cardIdx + 1} / 06`;
+                },
+                invalidateOnRefresh: true
+            });
+
+            gsap.from(cards, {
+                scrollTrigger: {
+                    trigger: outer,
+                    start: 'top 80%',
+                    toggleActions: 'play none none none'
+                },
+                y: 60, opacity: 0, stagger: 0.08, duration: 0.9, ease: 'power3.out'
+            });
+
+            window.addEventListener('resize', () => ScrollTrigger.refresh());
+        }
+
+        // ── Mobile slider ──
+        function initMobile() {
+            const viewport = document.querySelector('.cards-viewport');
+            const cards = document.querySelectorAll('.card');
+            const dots = document.querySelectorAll('.mobile-dot');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const countEl = document.getElementById('mobileCount');
+            const fillEl = document.getElementById('progressFill');
+            let current = 0;
+            const total = cards.length;
+
+            function getCardWidth() {
+                return cards[0].offsetWidth + 14;
+            }
+
+            function goTo(idx) {
+                idx = Math.max(0, Math.min(total - 1, idx));
+                current = idx;
+                viewport.scrollTo({ left: getCardWidth() * idx, behavior: 'smooth' });
+                updateUI();
+            }
+
+            function updateUI() {
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+                countEl.textContent = `0${current + 1} / 0${total}`;
+                fillEl.style.width = ((current / (total - 1)) * 100) + '%';
+                prevBtn.classList.toggle('disabled', current === 0);
+                nextBtn.classList.toggle('disabled', current === total - 1);
+            }
+
+            dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+            prevBtn.addEventListener('click', () => goTo(current - 1));
+            nextBtn.addEventListener('click', () => goTo(current + 1));
+
+            let scrollTimer;
+            viewport.addEventListener('scroll', () => {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(() => {
+                    const w = getCardWidth();
+                    const idx = Math.round(viewport.scrollLeft / w);
+                    if (idx !== current) { current = idx; updateUI(); }
+                }, 80);
+            }, { passive: true });
+
+            let touchStartX = 0;
+            viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            viewport.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+            }, { passive: true });
+
+            gsap.from(cards, {
+                y: 50, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power3.out', delay: 0.2
+            });
+
+            updateUI();
+        }
+
+        // ── Init based on viewport ──
+        if (isMobile()) {
+            // Mobile: vertical stack, just animate cards in
+            const cards = document.querySelectorAll('.card');
+            gsap.from(cards, {
+                y: 40, opacity: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out', delay: 0.1
+            });
+        } else {
+            initDesktop();
+        }
+
+        // ── Default cursor always visible on desktop ──
+        if (!isMobile()) {
+            // Cards should NOT hide the cursor - remove cursor:none from cards
+            document.querySelectorAll('.card').forEach(el => {
+                el.style.cursor = 'default';
+            });
+        }
+
+  // service started
+document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll('.service-card');
+      const stickyText = document.getElementById('stickyText');
+      const stickyEmoji = document.getElementById('stickyEmoji');
+
+      let activeText = "SEO";
+      const rightCards = Array.from(cards).slice(1);
+      
+      window.addEventListener('scroll', () => {
+        let newActiveText = "SEO";
+        let newActiveEmoji = "🚀";
+        
+        for (let i = rightCards.length - 1; i >= 0; i--) {
+          const rect = rightCards[i].getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.65) {
+            newActiveText = rightCards[i].getAttribute('data-text');
+            newActiveEmoji = rightCards[i].getAttribute('data-emoji');
+            break;
+          }
+        }
+        
+        if (newActiveText !== activeText) {
+          activeText = newActiveText;
+          stickyText.style.opacity = '0';
+          stickyEmoji.style.opacity = '0';
+          
+          setTimeout(() => {
+            stickyText.textContent = newActiveText;
+            stickyEmoji.textContent = newActiveEmoji;
+            
+            if (newActiveText.length > 4) {
+              stickyText.style.fontSize = "clamp(4.5rem, 8vw, 7rem)";
+            } else {
+              stickyText.style.fontSize = "clamp(7rem, 14vw, 11.5rem)";
+            }
+
+            stickyText.style.opacity = '1';
+            stickyEmoji.style.opacity = '1';
+          }, 300);
+        }
+      });
+    });
+  // ended 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </script>
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
