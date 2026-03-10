@@ -22,11 +22,7 @@
       --text-muted: #9ca3af;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+
 
     body {
       background: var(--dark);
@@ -36,10 +32,48 @@
       line-height: 1.6;
     }
 
+    /* SECTION BACKGROUND */
     .process-section {
       position: relative;
       padding: 140px 0 220px;
+      background: #050505;
       overflow: hidden;
+    }
+
+    /* GRID RIGHT TOP */
+    .process-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 700px;
+      height: 700px;
+      background-image:
+        linear-gradient(rgba(0, 255, 150, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 150, 0.4) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(circle at 100% 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+      -webkit-mask-image: radial-gradient(circle at 100% 0%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* GRID LEFT BOTTOM */
+    .process-section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 700px;
+      height: 700px;
+      background-image:
+        linear-gradient(rgba(0, 255, 150, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 150, 0.4) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(circle at 0% 100%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+      -webkit-mask-image: radial-gradient(circle at 0% 100%, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     .title {
@@ -49,6 +83,7 @@
       margin-bottom: 1rem;
       background: linear-gradient(90deg, #fff, var(--primary), #fff);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -57,20 +92,6 @@
       font-size: 1.3rem;
       text-align: center;
       margin-bottom: 100px;
-    }
-
-    /* Grid background */
-    .grid-bg {
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(60, 255, 143, 0.15) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(60, 255, 143, 0.15) 1px, transparent 1px);
-      background-size: 60px 60px;
-      -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-      mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-      pointer-events: none;
-      z-index: 0;
     }
 
     /* Background floating elements */
@@ -292,14 +313,535 @@
 
       /* simplify on mobile */
     }
+
+    /* ──── CTA SECTION ──── */
+    .cta-section {
+      position: relative;
+      padding: 240px 0 160px;
+      text-align: center;
+      overflow: hidden;
+      background: #050505;
+    }
+
+    .cta-bg-curve {
+      position: absolute;
+      top: 130px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130vw;
+      height: 1000px;
+      background: radial-gradient(ellipse at center top, rgba(30, 90, 45, 0.65) 0%, rgba(5, 5, 5, 1) 60%);
+      border-radius: 50% 50% 0 0;
+      z-index: 0;
+      box-shadow: inset 0 30px 80px rgba(60, 255, 143, 0.06);
+      border-top: 1px solid rgba(60, 255, 143, 0.25);
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      margin-bottom: 2.2rem;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary);
+      color: #000;
+      padding: 8px 8px 8px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(60, 255, 143, 0.3);
+    }
+
+    .cta-icon {
+      width: 38px;
+      height: 38px;
+      background: #000;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ──── SUCCESS STORIES SECTION ──── */
+    .success-section {
+      padding: 120px 0 160px;
+      /* Background matches the deeply noisy/radial green in the reference */
+      background: radial-gradient(ellipse at center 20%, #3e6d49 0%, #1e3a24 60%, #050505 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative floating SVGs */
+    .success-deco {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.8;
+      animation: drift 15s infinite ease-in-out alternate;
+    }
+
+    .success-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .success-heading {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .success-badge {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 50px;
+      margin-bottom: 80px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .success-badge span {
+      font-weight: 800;
+    }
+
+    .rating-card {
+      background: #5ae76b;
+      border-radius: 28px;
+      padding: 50px 30px;
+      text-align: center;
+      color: #000;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rating-number {
+      font-size: 7.5rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .rating-trustpilot {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .rating-trustpilot svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .rating-desc {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      line-height: 1.25;
+      max-width: 280px;
+    }
+
+    .btn-rate-us {
+      background: #000;
+      color: #fff;
+      border-radius: 50px;
+      padding: 8px 8px 8px 26px;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+
+    .btn-rate-us:hover {
+      transform: translateY(-4px);
+    }
+
+    .btn-rate-us .arrow-circle {
+      background: #5ae76b;
+      color: #000;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-card-main {
+      background: #151515;
+      border-radius: 28px;
+      padding: 50px;
+      display: flex;
+      height: 100%;
+      gap: 50px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .testi-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .testi-stars {
+      color: #ffb800;
+      margin-bottom: 30px;
+    }
+
+    .testi-stars svg {
+      width: 22px;
+      margin-right: 4px;
+    }
+
+    .testi-quote {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #fff;
+      line-height: 1.45;
+      margin-bottom: 50px;
+    }
+
+    .testi-nav {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .testi-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .testi-dot {
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .testi-dot.active {
+      background: #5ae76b;
+      width: 20px;
+      border-radius: 10px;
+    }
+
+    .testi-arrows {
+      display: flex;
+      gap: 20px;
+      color: #555;
+    }
+
+    .testi-arrows svg {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .testi-arrows svg:hover {
+      color: #fff;
+    }
+
+    .testi-right {
+      width: 200px;
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+      padding-left: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .testi-logo {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.2rem;
+      line-height: 1.1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-transform: uppercase;
+    }
+
+    .testi-logo span.qc {
+      background: #5ae76b;
+      color: #000;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    .testi-author {
+      margin-top: auto;
+    }
+
+    .testi-author img {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      object-fit: cover;
+    }
+
+    .testi-author h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .testi-author p {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    @media (max-width: 991px) {
+      .testimonial-card-main {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 40px;
+      }
+
+      .testi-right {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-left: 0;
+        padding-top: 40px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .testi-author {
+        margin-top: 0;
+        text-align: right;
+        margin-left: auto;
+      }
+
+      .testi-author img {
+        margin-bottom: 0;
+        margin-left: 15px;
+        float: right;
+      }
+
+      .testi-author h4 {
+        clear: both;
+      }
+
+      .rating-card {
+        margin-bottom: 30px;
+      }
+
+      .testi-quote {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ──── BLOG STACKING SECTION ──── */
+    .blog-section {
+      background: #050505;
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .blog-left {
+      position: sticky;
+      top: 140px;
+      padding-right: 40px;
+    }
+
+    .blog-left h2 {
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.7));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .blog-left p {
+      color: #9ca3af;
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .btn-view-all {
+      display: inline-flex;
+      align-items: center;
+      background: var(--primary);
+      color: #000;
+      padding: 10px 10px 10px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-view-all:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(60, 255, 143, 0.2);
+    }
+
+    .btn-icon {
+      background: #000;
+      color: #fff;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .blog-right {
+      position: relative;
+    }
+
+    .stack-card {
+      position: sticky;
+      background: #111;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: stretch;
+      margin-bottom: 40px;
+      height: 320px;
+      transform-origin: center top;
+      overflow: hidden;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Stacking logic heights and offsets via CSS Sticky (fallback for GSAP pinning) */
+    .stack-card:nth-child(1) {
+      top: 100px;
+    }
+
+    .stack-card:nth-child(2) {
+      top: 120px;
+    }
+
+    .stack-card:nth-child(3) {
+      top: 140px;
+    }
+
+    .stack-card:nth-child(4) {
+      top: 160px;
+    }
+
+    .stack-card:nth-child(5) {
+      top: 180px;
+    }
+
+    .stack-card:nth-child(6) {
+      top: 200px;
+    }
+
+    .card-content-left {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 20px;
+    }
+
+    .card-content-left h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .card-content-left p {
+      color: #9ca3af;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: auto;
+    }
+
+    .card-image {
+      flex: 1;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 991px) {
+      .blog-left {
+        position: static;
+        margin-bottom: 60px;
+      }
+
+      .stack-card {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .card-image {
+        min-height: 200px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <section class="process-section">
-
-    <div class="grid-bg"></div>
 
     <div class="floating-bg">
       <div class="float-shape s1"></div>
@@ -372,6 +914,245 @@
 
   </section>
 
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-bg-curve"></div>
+    <div class="container cta-content">
+      <h2 class="cta-title">Start your dream project today</h2>
+      <a href="#" class="cta-btn">
+        Let's talk
+        <div class="cta-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Blog Stack Section -->
+  <section class="blog-section">
+    <div class="container">
+      <div class="row">
+        <!-- Sticky Left Side -->
+        <div class="col-lg-5">
+          <div class="blog-left">
+            <h2>Our Latest<br>Blog &<br>Article</h2>
+            <p>Explore our latest blog and articles for expert insights on web design, SEO, and digital trends.</p>
+            <a href="#" class="btn-view-all">
+              View All
+              <span class="btn-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Scrolling Right Side -->
+        <div class="col-lg-7">
+          <div class="blog-right">
+
+            <!-- Card 1 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>Master the Art of Visual Storytelling</h3>
+                <p>Explore our latest blog and articles for expert insights on web design, SEO, and more.</p>
+                <div class="card-meta">18 MAY 2026 / BY MASON HAYES</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800" alt="Blog Image 1">
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>Elevate Your Brand with Bold Visuals</h3>
+                <p>Explore our latest blog and articles for expert insights on digital branding and marketing trends.
+                </p>
+                <div class="card-meta">25 MAY 2026 / BY HENRY WALKER</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" alt="Blog Image 2">
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>SEO Strategies for Fast Growth</h3>
+                <p>Learn exactly how to accelerate organic growth by leveraging technical SEO.</p>
+                <div class="card-meta">02 JUN 2026 / BY SARAH JENKINS</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" alt="Blog Image 3">
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>The Power of UX in Modern Apps</h3>
+                <p>Find out why user experience defines the success of digital products globally.</p>
+                <div class="card-meta">14 JUN 2026 / BY EMMA ROGERS</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1507238692062-5a042e9eec62?q=80&w=800" alt="Blog Image 4">
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>Scaling Up Your Tech Agency</h3>
+                <p>Insightful techniques from industry experts on managing aggressive growth.</p>
+                <div class="card-meta">22 JUN 2026 / BY MASON HAYES</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800" alt="Blog Image 5">
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="stack-card">
+              <div class="card-content-left">
+                <h3>Future of Digital Marketing in 2027</h3>
+                <p>A deep dive into AI, automation, and the new era of customer acquisition.</p>
+                <div class="card-meta">30 JUN 2026 / BY HENRY WALKER</div>
+              </div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800" alt="Blog Image 6">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="success-section">
+    <!-- Decos -->
+    <svg class="success-deco" style="top: 15%; left: 8%;" width="100" height="100" viewBox="0 0 100 100" fill="none">
+      <path d="M10,10 Q30,50 10,90 Q90,50 30,15" stroke="#ffe600" stroke-width="6" stroke-linecap="round" fill="none" />
+      <path d="M20,10 Q40,50 20,90 Q100,50 40,15" stroke="#ffe600" stroke-width="6" stroke-linecap="round"
+        fill="none" />
+    </svg>
+    <svg class="success-deco" style="top: 25%; right: 10%;" width="40" height="120" viewBox="0 0 40 120" fill="none">
+      <rect x="10" y="20" width="20" height="80" rx="10" fill="#5ae76b" transform="rotate(30 20 60)" />
+    </svg>
+    <svg class="success-deco" style="bottom: 25%; left: 5%;" width="60" height="60" viewBox="0 0 60 60" fill="none">
+      <path d="M10,30 L30,50 L50,10" stroke="#b46ff0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <svg class="success-deco" style="bottom: 30%; right: 5%;" width="80" height="80" viewBox="0 0 80 80" fill="none">
+      <path d="M10,50 Q30,10 50,50 T90,50" stroke="#b46ff0" stroke-width="6" stroke-linecap="round" fill="none" />
+    </svg>
+
+    <div class="container text-center success-content">
+      <h2 class="success-heading">Success Stories: How<br>Feedback Fuels Our Growth</h2>
+      <div class="success-badge">
+        Plexify is rated <span>4.5 / 5</span> average from 200 reviews on Google, Clutch!
+      </div>
+
+      <div class="row text-start align-items-stretch">
+
+        <!-- Left Column: Rating Card -->
+        <div class="col-lg-4 col-md-12">
+          <div class="rating-card">
+            <div class="rating-number">4.5</div>
+            <div class="rating-trustpilot">
+              Star Rating on
+              <svg viewBox="0 0 24 24" fill="#00b67a">
+                <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+              </svg>
+              Trustpilot
+            </div>
+            <div class="rating-desc">10 Years Experience in Digital marketing</div>
+            <a href="#" class="btn-rate-us">
+              Rate Us on Trustpilot
+              <span class="arrow-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Testimonial Card -->
+        <div class="col-lg-8 col-md-12">
+          <div class="testimonial-card-main">
+
+            <div class="testi-left">
+              <div class="testi-stars">
+                <!-- 5 full stars -->
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+                </svg>
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="12,2 15,9 22,9 16,14 18,21 12,17 6,21 8,14 2,9 9,9" />
+                </svg>
+              </div>
+              <div class="testi-quote">
+                "The flexibility is unmatched. Every component feels thoughtfully crafted, and integrating it was
+                seamless."
+              </div>
+              <div class="testi-nav">
+                <div class="testi-dots">
+                  <div class="testi-dot active"></div>
+                  <div class="testi-dot"></div>
+                  <div class="testi-dot"></div>
+                </div>
+                <div class="testi-arrows">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                  </svg>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-right">
+              <div class="testi-logo">
+                <span class="qc">QC</span>
+                <span>POWER<br>XR2<br>MODULE</span>
+              </div>
+              <div class="testi-author">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200" alt="Isla Morgan">
+                <h4>Isla Morgan</h4>
+                <p>Power XR2 Module</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <script>
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -419,6 +1200,173 @@
       },
       ease: "none"
     });
+
+    // Animate the stacking cards to fade and scale down as they are scrolled over
+    const cards = gsap.utils.toArray(".stack-card");
+    cards.forEach((card, index) => {
+      if (index !== cards.length - 1) { // Skip the very last card
+        gsap.to(card, {
+          scale: 0.92,
+          opacity: 0.3,
+          boxShadow: "0 -20px 60px rgba(0,0,0,0.8)",
+          scrollTrigger: {
+            trigger: cards[index + 1],  // Animate when the next card touches it
+            start: `top center`,        // Start slightly before the next card entirely covers it
+            end: `top ${100 + (index * 20) + 10}px`, // Finish exactly when next card hits its sticky position
+            scrub: true,
+          }
+        });
+      }
+    });
+
+    // --- SUCCESS STORIES SCROLL ANIMATION ---
+    gsap.from(".success-section .rating-card", {
+      scrollTrigger: {
+        trigger: ".success-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    gsap.from(".success-section .testimonial-card-main", {
+      scrollTrigger: {
+        trigger: ".success-section",
+        start: "top 75%",
+        toggleActions: "play none none reverse"
+      },
+      x: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out"
+    });
+
+    // --- TESTIMONIAL CAROUSEL LOGIC ---
+    const testimonialsData = [
+      {
+        quote: "\"The flexibility is unmatched. Every component feels thoughtfully crafted, and integrating it was seamless.\"",
+        logoPre: "QC",
+        logoText: "POWER<br>XR2<br>MODULE",
+        img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200",
+        name: "Isla Morgan",
+        role: "Power XR2 Module"
+      },
+      {
+        quote: "\"Our digital presence transformed instantly. The workflow is intuitive and visually stunning.\"",
+        logoPre: "NX",
+        logoText: "NEXUS<br>CORE<br>SYSTEM",
+        img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200",
+        name: "David Chen",
+        role: "Lead Developer"
+      },
+      {
+        quote: "\"Incredible attention to detail. We were able to scale our marketing sites twice as fast.\"",
+        logoPre: "VX",
+        logoText: "VERTEX<br>ANALYTICS<br>PRO",
+        img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200",
+        name: "Sarah Jenkins",
+        role: "Product Manager"
+      }
+    ];
+
+    let currentTestiIdx = 0;
+    const tQuote = document.querySelector('.testi-quote');
+    const tLogoPre = document.querySelector('.testi-logo .qc');
+    const tLogoText = document.querySelectorAll('.testi-logo span')[1];
+    const tImg = document.querySelector('.testi-author img');
+    const tName = document.querySelector('.testi-author h4');
+    const tRole = document.querySelector('.testi-author p');
+    const tDotsContainer = document.querySelector('.testi-dots');
+    const tArrows = document.querySelectorAll('.testi-arrows svg');
+
+    if (tQuote && tLogoPre && tLogoText && tImg && tName && tRole) {
+      // Clear existing hardcoded dots
+      tDotsContainer.innerHTML = '';
+
+      // Generate dots natively
+      testimonialsData.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.className = `testi-dot ${i === 0 ? 'active' : ''}`;
+        tDotsContainer.appendChild(dot);
+      });
+
+      const tDots = document.querySelectorAll('.testi-dot');
+      let isAnimating = false;
+
+      function updateTestimonialDOM(index) {
+        if (isAnimating) return;
+        isAnimating = true;
+        currentTestiIdx = index;
+        const data = testimonialsData[index];
+
+        const elementsToFade = [tQuote, tLogoPre, tLogoText, tImg, tName, tRole];
+
+        gsap.to(elementsToFade, {
+          opacity: 0,
+          y: 6,
+          duration: 0.25,
+          stagger: 0.03,
+          onComplete: () => {
+            tQuote.innerHTML = data.quote;
+            tLogoPre.innerHTML = data.logoPre;
+            tLogoText.innerHTML = data.logoText;
+            tImg.src = data.img;
+            tName.innerHTML = data.name;
+            tRole.innerHTML = data.role;
+
+            gsap.to(elementsToFade, {
+              opacity: 1,
+              y: 0,
+              duration: 0.35,
+              stagger: 0.04,
+              onComplete: () => {
+                isAnimating = false;
+              }
+            });
+          }
+        });
+
+        tDots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+      }
+
+      let testiAutoScroll = setInterval(() => {
+        updateTestimonialDOM((currentTestiIdx + 1) % testimonialsData.length);
+      }, 5000);
+
+      function resetTestiInterval() {
+        clearInterval(testiAutoScroll);
+        testiAutoScroll = setInterval(() => {
+          updateTestimonialDOM((currentTestiIdx + 1) % testimonialsData.length);
+        }, 5000);
+      }
+
+      tDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          if (currentTestiIdx === index) return;
+          updateTestimonialDOM(index);
+          resetTestiInterval();
+        });
+      });
+
+      if (tArrows.length === 2) {
+        // Prev arrow (Left)
+        tArrows[0].addEventListener('click', () => {
+          const nextIdx = (currentTestiIdx - 1 + testimonialsData.length) % testimonialsData.length;
+          updateTestimonialDOM(nextIdx);
+          resetTestiInterval();
+        });
+        // Next arrow (Right)
+        tArrows[1].addEventListener('click', () => {
+          const nextIdx = (currentTestiIdx + 1) % testimonialsData.length;
+          updateTestimonialDOM(nextIdx);
+          resetTestiInterval();
+        });
+      }
+    }
+
   </script>
 
 </body>

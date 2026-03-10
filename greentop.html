@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Section</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --green: #6BFF8A;
+      --green-dim: rgba(107, 255, 138, 0.15);
+      --green-glow: rgba(107, 255, 138, 0.35);
+      --bg: #0b0f0c;
+      --card-bg: #111714;
+      --border: rgba(107, 255, 138, 0.12);
+      --text-muted: rgba(255,255,255,0.5);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'DM Sans', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* ─── SECTION WRAPPER ─────────────────────────────────── */
+    .blog-section {
+      position: relative;
+      padding: 100px 0 80px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    /* radial glow */
+    .blog-section::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 900px;
+      height: 600px;
+      background: radial-gradient(ellipse at center,
+        rgba(107,255,138,0.13) 0%,
+        rgba(107,255,138,0.04) 40%,
+        transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blog-section > * { position: relative; z-index: 1; }
+
+    /* ─── TOP CTA ──────────────────────────────────────────── */
+    .cta-wrap {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .cta-heading {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    .cta-heading span {
+      color: var(--green);
+    }
+
+    .btn-talk {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--green);
+      color: #0b0f0c;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border: none;
+      border-radius: 999px;
+      padding: 14px 26px 14px 32px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      box-shadow: 0 0 28px rgba(107,255,138,0.35);
+    }
+
+    .btn-talk:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 48px rgba(107,255,138,0.55);
+      background: #7dffA0;
+      color: #0b0f0c;
+    }
+
+    .btn-talk .icon-circle {
+      width: 30px;
+      height: 30px;
+      background: rgba(0,0,0,0.18);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-talk .icon-circle svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    /* ─── DIVIDER LINE ─────────────────────────────────────── */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 30%, var(--border) 70%, transparent);
+      margin-bottom: 64px;
+    }
+
+    /* ─── LEFT HEADING ─────────────────────────────────────── */
+    .blog-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .blog-label::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1.5px;
+      background: var(--green);
+    }
+
+    .blog-main-heading {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .blog-main-heading em {
+      font-style: normal;
+      color: var(--green);
+    }
+
+    .blog-desc {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 340px;
+      margin-bottom: 30px;
+    }
+
+    .btn-view-all {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--green);
+      font-family: 'Syne', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-dim);
+      padding-bottom: 2px;
+      transition: gap 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-view-all:hover {
+      gap: 14px;
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    /* ─── BLOG CARD ────────────────────────────────────────── */
+    .blog-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 30px rgba(107,255,138,0.08);
+      border-color: rgba(107,255,138,0.28);
+    }
+
+    /* card inner row */
+    .blog-card-inner {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
+
+    /* text side */
+    .blog-card-body {
+      flex: 1;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      background: var(--green-dim);
+      color: var(--green);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 4px 12px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .blog-card-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      line-height: 1.35;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-title span { color: var(--green); }
+
+    .blog-card-text {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      flex: 1;
+      margin-bottom: 24px;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .meta-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6BFF8A, #1a3a26);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: #0b0f0c;
+      flex-shrink: 0;
+    }
+
+    .meta-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .meta-author {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+    }
+
+    .meta-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* image side */
+    .blog-card-image {
+      width: 190px;
+      flex-shrink: 0;
+      overflow: hidden;
+      border-radius: 0 20px 20px 0;
+      position: relative;
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85) saturate(1.1);
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.05);
+      filter: brightness(0.95) saturate(1.2);
+    }
+
+    /* green tint overlay on image */
+    .blog-card-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to left, transparent 60%, var(--card-bg) 100%);
+      pointer-events: none;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 992px) {
+      .blog-desc { max-width: 100%; }
+      .left-col { margin-bottom: 40px; }
+    }
+
+    @media (max-width: 768px) {
+      .blog-section { padding: 70px 0 60px; }
+      .cta-wrap { margin-bottom: 56px; }
+
+      .blog-card-inner {
+        flex-direction: column;
+      }
+      .blog-card-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 0 0 0 0;
+        border-radius: 0;
+      }
+      .blog-card-image::after {
+        background: linear-gradient(to top, transparent 60%, var(--card-bg) 100%);
+      }
+      .blog-card { border-radius: 16px; }
+      .blog-card-image { border-radius: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .btn-talk { font-size: 0.85rem; padding: 12px 20px 12px 26px; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="blog-section">
+  <div class="container">
+
+    <!-- ── TOP CTA ── -->
+    <div class="cta-wrap">
+      <h2 class="cta-heading">Start your <span>dream project</span> today</h2>
+      <a href="#" class="btn-talk">
+        Let's talk
+        <span class="icon-circle">
+          <!-- arrow icon -->
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#0b0f0c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <hr class="section-divider"/>
+
+    <!-- ── BOTTOM ROW ── -->
+    <div class="row align-items-center g-4">
+
+      <!-- LEFT -->
+      <div class="col-12 col-lg-5 left-col">
+        <p class="blog-label">From the blog</p>
+        <h3 class="blog-main-heading">
+          Our Latest<br/>
+          Blog &amp; <em>Article</em>
+        </h3>
+        <p class="blog-desc">
+          Explore fresh perspectives, in-depth guides, and creative ideas curated by our team — crafted to help you build, grow, and stay inspired.
+        </p>
+        <a href="#" class="btn-view-all">
+          View all articles
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="#6BFF8A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- RIGHT — blog card -->
+      <div class="col-12 col-lg-7">
+        <div class="blog-card">
+          <div class="blog-card-inner">
+
+            <!-- Text -->
+            <div class="blog-card-body">
+              <div>
+                <span class="blog-tag">Design</span>
+                <h4 class="blog-card-title">
+                  How to Create a <span>Stunning</span><br/>
+                  Visual Identity
+                </h4>
+                <p class="blog-card-text">
+                  Dive into the principles behind memorable brand design — from color psychology and typography pairings to the subtle details that make a brand instantly recognizable.
+                </p>
+              </div>
+              <div class="blog-meta">
+                <div class="meta-avatar">JK</div>
+                <div class="meta-info">
+                  <span class="meta-author">James Keller</span>
+                  <span class="meta-date">March 8, 2026 · 5 min read</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image -->
+            <div class="blog-card-image">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=400&q=80"
+                alt="Blog thumbnail"
+              />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
