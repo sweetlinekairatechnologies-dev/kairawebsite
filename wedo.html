@@ -34,7 +34,7 @@
             flex: 1;
             display: flex;
             align-items: center;
-            padding: 180px 0 120px 0;
+            padding: 120px 0 120px 0;
             z-index: 1;
         }
 
@@ -58,17 +58,27 @@
             pointer-events: none;
         }
 
-        /* Center Radial Green Glow */
+        /* Center Radial Green Glows */
         .glow-blob {
             position: absolute;
-            top: 50%;
-            left: 20%;
-            width: 800px;
-            height: 800px;
             background: radial-gradient(circle, rgba(60, 255, 143, 0.12) 0%, transparent 60%);
             transform: translate(-50%, -50%);
             pointer-events: none;
             filter: blur(60px);
+        }
+
+        .glow-blob.left-center {
+            top: 50%;
+            left: 20%;
+            width: 800px;
+            height: 800px;
+        }
+
+        .glow-blob.right-top {
+            top: 0%;
+            left: 100%;
+            width: 600px;
+            height: 600px;
         }
 
         /* ──── Navbar Elements ──── */
@@ -494,7 +504,8 @@
 
     <!-- Dark gradient & grid background -->
     <div class="bg-layer">
-        <div class="glow-blob"></div>
+        <div class="glow-blob left-center"></div>
+        <div class="glow-blob right-top"></div>
     </div>
 
     <!-- ══════════ FULLSCREEN MENU OVERLAY ══════════ -->
