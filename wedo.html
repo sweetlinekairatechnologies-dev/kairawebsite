@@ -480,20 +480,126 @@
         /* ──── Responsive Adjustments ──── */
         @media (max-width: 991px) {
             .custom-navbar {
-                padding: 20px;
+                padding: 20px 24px;
             }
 
             .hero-section {
-                padding: 100px 0 60px 0;
+                padding: 110px 0 60px 0;
             }
 
             .right-content {
                 padding-left: 0;
-                margin-top: 50px;
+                margin-top: 40px;
             }
 
             .desc-text {
                 max-width: 100%;
+            }
+
+            .glow-blob {
+                width: 500px;
+                height: 500px;
+            }
+
+            /* Fullscreen menu adjustments */
+            .fs-menu-content {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+                gap: 50px;
+            }
+
+            .fs-menu-right {
+                justify-content: flex-start;
+                width: 100%;
+            }
+
+            .fs-close-btn {
+                top: 25px;
+                right: 25px;
+                width: 50px;
+                height: 50px;
+            }
+
+            .fs-menu-container {
+                padding-top: 90px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .main-heading {
+                font-size: clamp(2.5rem, 8vw, 3.5rem);
+            }
+
+            .client-stats {
+                gap: 20px;
+                margin-bottom: 20px;
+            }
+
+            .desc-text {
+                font-size: 1.05rem;
+                line-height: 1.6;
+            }
+
+            .fs-contact-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .fs-contact-row[style] {
+                margin-top: 30px !important;
+            }
+
+            .fs-menu-bottom {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .fs-social-links {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .talk-btn {
+                padding: 6px 6px 6px 18px;
+                font-size: 0.95rem;
+            }
+
+            .talk-arrow {
+                width: 30px;
+                height: 30px;
+            }
+
+            .talk-arrow svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .menu-pill {
+                padding: 5px 18px 5px 5px;
+            }
+
+            .menu-brand {
+                font-size: 1.2rem;
+                padding: 4px 12px;
+            }
+
+            .menu-text {
+                font-size: 0.95rem;
+            }
+
+            .fs-link {
+                font-size: 2.2rem;
+            }
+
+            .custom-navbar {
+                padding: 16px;
+            }
+
+            .glow-blob {
+                display: none;
+                /* remove for better performance and visibility on small screens */
             }
         }
     </style>
