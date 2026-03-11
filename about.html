@@ -18,6 +18,8 @@
 
   <!-- ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- MotionPathPlugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
 
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -253,192 +255,187 @@
 
   </section>
 
-<!-- about finished -->
+  <!-- about finished -->
 
- <!-- Custom cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-trail" id="cursorTrail"></div>
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
 
 
-    <!-- Horizontal scroll section -->
-    <div class="sticky-outer" id="stickyOuter">
-        <div class="sticky-pin" id="stickyPin">
+  <!-- Horizontal scroll section -->
+  <div class="sticky-outer" id="stickyOuter">
+    <div class="sticky-pin" id="stickyPin">
 
-            <div class="section-header">
-               
-                <div style="text-align:right;">
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar-fill" id="progressFill"></div>
-                    </div>
-                    <div class="progress-count" id="progressCount">01 / 06</div>
-                </div>
+      <div class="section-header">
+
+        <div style="text-align:right;">
+          <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-count" id="progressCount">01 / 06</div>
+        </div>
+      </div>
+
+      <div class="cards-viewport">
+        <div class="cards-track" id="cardsTrack">
+
+          <!-- Card 1 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+              alt="Project 1">
+            <div class="card-overlay"></div>
+            <div class="card-number">01</div>
+            <div class="card-chip">Branding</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </div>
-
-            <div class="cards-viewport">
-                <div class="cards-track" id="cardsTrack">
-
-                    <!-- Card 1 -->
-                    <div class="card">
-                        <img class="card-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
-                            alt="Project 1">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">01</div>
-                        <div class="card-chip">Branding</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Luminary Brand Identity</div>
-                            <div class="card-desc">Complete visual overhaul for a luxury fintech startup seeking bold
-                                market presence.</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="card">
-                        <img class="card-bg"
-                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
-                            alt="Project 2">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">02</div>
-                        <div class="card-chip">Web Design</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Nexus Digital Platform</div>
-                            <div class="card-desc">Award-winning SaaS platform design with seamless UX flows and
-                                micro-animations.</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="card">
-                        <img class="card-bg"
-                            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80"
-                            alt="Project 3">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">03</div>
-                        <div class="card-chip">Motion</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Velocity Motion Reel</div>
-                            <div class="card-desc">Cinematic motion graphics campaign for a global sports apparel
-                                launch.</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="card">
-                        <img class="card-bg"
-                            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
-                            alt="Project 4">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">04</div>
-                        <div class="card-chip">Strategy</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Apex Growth Engine</div>
-                            <div class="card-desc">Data-driven marketing strategy that scaled a D2C brand to 8-figure
-                                revenue.</div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="card">
-                        <img class="card-bg"
-                            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80"
-                            alt="Project 5">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">05</div>
-                        <div class="card-chip">Development</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Orbital App Ecosystem</div>
-                            <div class="card-desc">End-to-end product engineering for a real-time collaboration suite.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="card">
-                        <img class="card-bg"
-                            src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80"
-                            alt="Project 6">
-                        <div class="card-overlay"></div>
-                        <div class="card-number">06</div>
-                        <div class="card-chip">Campaign</div>
-                        <div class="card-arrow">
-                            <svg viewBox="0 0 24 24">
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                                <polyline points="12 5 19 12 12 19" />
-                            </svg>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-title">Echo Social Campaign</div>
-                            <div class="card-desc">Viral multi-platform campaign reaching 40M impressions in the first
-                                week.</div>
-                        </div>
-                    </div>
-
-                </div><!-- /cards-track -->
-            </div><!-- /cards-viewport -->
-
-            <!-- Mobile dots -->
-            <div class="mobile-dots" id="mobileDots">
-                <div class="mobile-dot active" data-idx="0"></div>
-                <div class="mobile-dot" data-idx="1"></div>
-                <div class="mobile-dot" data-idx="2"></div>
-                <div class="mobile-dot" data-idx="3"></div>
-                <div class="mobile-dot" data-idx="4"></div>
-                <div class="mobile-dot" data-idx="5"></div>
+            <div class="card-content">
+              <div class="card-title">Luminary Brand Identity</div>
+              <div class="card-desc">Complete visual overhaul for a luxury fintech startup seeking bold
+                market presence.</div>
             </div>
+          </div>
 
-            <!-- Mobile nav -->
-            <div class="mobile-nav" id="mobileNav">
-                <button class="mobile-nav-btn disabled" id="prevBtn" aria-label="Previous">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                </button>
-                <span class="mobile-card-label" id="mobileCount">01 / 06</span>
-                <button class="mobile-nav-btn" id="nextBtn" aria-label="Next">
-                    <svg viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                </button>
+          <!-- Card 2 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&q=80"
+              alt="Project 2">
+            <div class="card-overlay"></div>
+            <div class="card-number">02</div>
+            <div class="card-chip">Web Design</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </div>
+            <div class="card-content">
+              <div class="card-title">Nexus Digital Platform</div>
+              <div class="card-desc">Award-winning SaaS platform design with seamless UX flows and
+                micro-animations.</div>
+            </div>
+          </div>
 
-        </div><!-- /sticky-pin -->
-    </div><!-- /sticky-outer -->
+          <!-- Card 3 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=700&q=80"
+              alt="Project 3">
+            <div class="card-overlay"></div>
+            <div class="card-number">03</div>
+            <div class="card-chip">Motion</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Velocity Motion Reel</div>
+              <div class="card-desc">Cinematic motion graphics campaign for a global sports apparel
+                launch.</div>
+            </div>
+          </div>
 
-<!-- work finished -->
+          <!-- Card 4 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=80"
+              alt="Project 4">
+            <div class="card-overlay"></div>
+            <div class="card-number">04</div>
+            <div class="card-chip">Strategy</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Apex Growth Engine</div>
+              <div class="card-desc">Data-driven marketing strategy that scaled a D2C brand to 8-figure
+                revenue.</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700&q=80"
+              alt="Project 5">
+            <div class="card-overlay"></div>
+            <div class="card-number">05</div>
+            <div class="card-chip">Development</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Orbital App Ecosystem</div>
+              <div class="card-desc">End-to-end product engineering for a real-time collaboration suite.
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="card">
+            <img class="card-bg" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=700&q=80"
+              alt="Project 6">
+            <div class="card-overlay"></div>
+            <div class="card-number">06</div>
+            <div class="card-chip">Campaign</div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </div>
+            <div class="card-content">
+              <div class="card-title">Echo Social Campaign</div>
+              <div class="card-desc">Viral multi-platform campaign reaching 40M impressions in the first
+                week.</div>
+            </div>
+          </div>
+
+        </div><!-- /cards-track -->
+      </div><!-- /cards-viewport -->
+
+      <!-- Mobile dots -->
+      <div class="mobile-dots" id="mobileDots">
+        <div class="mobile-dot active" data-idx="0"></div>
+        <div class="mobile-dot" data-idx="1"></div>
+        <div class="mobile-dot" data-idx="2"></div>
+        <div class="mobile-dot" data-idx="3"></div>
+        <div class="mobile-dot" data-idx="4"></div>
+        <div class="mobile-dot" data-idx="5"></div>
+      </div>
+
+      <!-- Mobile nav -->
+      <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-nav-btn disabled" id="prevBtn" aria-label="Previous">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <span class="mobile-card-label" id="mobileCount">01 / 06</span>
+        <button class="mobile-nav-btn" id="nextBtn" aria-label="Next">
+          <svg viewBox="0 0 24 24">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      </div>
+
+    </div><!-- /sticky-pin -->
+  </div><!-- /sticky-outer -->
+
+  <!-- work finished -->
 
 
 
 
-<section class="seo-section">
+  <section class="seo-section">
     <div class="container-fluid px-4 px-lg-5">
 
       <!-- TOP ROW -->
@@ -479,25 +476,41 @@
             <h2 class="card-title-main">Search Engine Optimization</h2>
             <ul class="features">
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 On-page and off-page SEO
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Keyword research and optimization
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Technical SEO
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Link building
               </li>
             </ul>
             <a href="#" class="view-btn">
               View Details
-              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></span>
             </a>
             <div class="card-corner">
               <span class="corner-seo">SEO</span>
@@ -515,25 +528,41 @@
             <h2 class="card-title-main">Email Marketing</h2>
             <ul class="features">
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Email campaign design and automation
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Personalized email sequences
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Newsletter creation
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 List segmentation and lead nurturing
               </li>
             </ul>
             <a href="#" class="view-btn">
               View Details
-              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></span>
             </a>
             <div class="card-corner">
               <span class="corner-seo" style="font-size: 1.8rem;">EMAIL</span>
@@ -547,21 +576,34 @@
             <h2 class="card-title-main">Social Media Marketing</h2>
             <ul class="features">
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Community engagement
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Influencer marketing
               </li>
               <li>
-                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                <svg class="check" viewBox="0 0 24 24" fill="none" stroke-width="2.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
                 Paid social advertising
               </li>
             </ul>
             <a href="#" class="view-btn">
               View Details
-              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg></span>
+              <span class="btn-arrow-circle"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg></span>
             </a>
             <div class="card-corner">
               <span class="corner-seo" style="font-size: 1.6rem;">SOCIAL</span>
@@ -575,7 +617,7 @@
 
     </div>
   </section>
- 
+
   <!-- end -->
 
 
@@ -590,8 +632,8 @@
 
 
 
-<!-- next section -->
- <div class="marquee-wrap">
+  <!-- next section -->
+  <div class="marquee-wrap">
     <div class="marquee-track">
       <!-- set 1 -->
       <div class="marquee-item"><span class="marquee-word">Analysis</span><span class="marquee-dot">🟠</span></div>
@@ -615,7 +657,7 @@
       <div class="marquee-item"><span class="marquee-word">Engagement</span><span class="marquee-dot">⭐</span></div>
     </div>
   </div>
-<!-- finished -->
+  <!-- finished -->
 
 
 
@@ -933,263 +975,274 @@
   </section>
 
 
-<!-- faq start -->
- 
-<section class="faq-section">
-  <div class="container">
-    <div class="row align-items-center">
+  <!-- faq start -->
 
-      <!-- Left: Image -->
-      <div class="col-lg-5 col-md-6 d-flex justify-content-center justify-content-md-start">
+  <section class="faq-section">
+    <div class="container">
+      <div class="row align-items-center">
 
-        <!-- image-outer: fixed anchor for squiggle -->
-        <div class="image-outer">
+        <!-- Left: Image -->
+        <div class="col-lg-5 col-md-6 d-flex justify-content-center justify-content-md-start">
 
-          <!-- image + arrow float together -->
-          <div class="image-wrapper">
-            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80"
-                 alt="Medical consultation" />
-            <div class="arrow-accent"></div>
-          </div>
+          <!-- image-outer: fixed anchor for squiggle -->
+          <div class="image-outer">
 
-          <!-- Yellow wavy lines — float on their OWN independent animation -->
-          <div class="squiggle-accent">
-            <svg viewBox="0 0 92 50" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <path d="M4 10 C10 2,18 2,24 10 C30 18,38 18,44 10 C50 2,58 2,64 10 C70 18,78 18,84 10"
-                stroke="#f5c842" stroke-width="5" stroke-linecap="round"/>
-              <path d="M4 25 C10 17,18 17,24 25 C30 33,38 33,44 25 C50 17,58 17,64 25 C70 33,78 33,84 25"
-                stroke="#f5c842" stroke-width="5" stroke-linecap="round"/>
-              <path d="M4 40 C10 32,18 32,24 40 C30 48,38 48,44 40 C50 32,58 32,64 40 C70 48,78 48,84 40"
-                stroke="#f5c842" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Right: FAQ Content -->
-      <div class="col-lg-7 col-md-6">
-        <div class="content-block">
-          <h2 class="faq-title">Frequently<br>Asked Questions</h2>
-          <p class="faq-subtitle">We have professional experts around world.</p>
-
-          <div class="accordion faq-accordion" id="faqAccordion">
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h1">
-                <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="false">
-                  <span>Am I a good candidate for plastic surgery?</span>
-                  <span class="acc-icon">
-                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </button>
-              </h2>
-              <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Good candidates are generally healthy individuals with realistic expectations. A thorough consultation with our board-certified surgeons will determine if surgery is right for you.
-                </div>
-              </div>
+            <!-- image + arrow float together -->
+            <div class="image-wrapper">
+              <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&q=80"
+                alt="Medical consultation" />
+              <div class="arrow-accent"></div>
             </div>
 
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h2">
-                <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false">
-                  <span>How do I prepare for surgery?</span>
-                  <span class="acc-icon">
-                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </button>
-              </h2>
-              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Preparation includes pre-operative blood work, stopping certain medications, and arranging for someone to drive you home and assist during recovery.
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="h3">
-                <button class="accordion-button collapsed" type="button"
-                  data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false">
-                  <span>What is the difference between cosmetic and surgery?</span>
-                  <span class="acc-icon">
-                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-                  </span>
-                </button>
-              </h2>
-              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body">
-                  Cosmetic surgery enhances appearance, while reconstructive surgery restores form and function. Both are performed by plastic surgeons but serve different goals.
-                </div>
-              </div>
+            <!-- Yellow wavy lines — float on their OWN independent animation -->
+            <div class="squiggle-accent">
+              <svg viewBox="0 0 92 50" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path d="M4 10 C10 2,18 2,24 10 C30 18,38 18,44 10 C50 2,58 2,64 10 C70 18,78 18,84 10" stroke="#f5c842"
+                  stroke-width="5" stroke-linecap="round" />
+                <path d="M4 25 C10 17,18 17,24 25 C30 33,38 33,44 25 C50 17,58 17,64 25 C70 33,78 33,84 25"
+                  stroke="#f5c842" stroke-width="5" stroke-linecap="round" />
+                <path d="M4 40 C10 32,18 32,24 40 C30 48,38 48,44 40 C50 32,58 32,64 40 C70 48,78 48,84 40"
+                  stroke="#f5c842" stroke-width="5" stroke-linecap="round" />
+              </svg>
             </div>
 
           </div>
         </div>
-      </div>
 
-    </div>
-  </div>
-</section>
+        <!-- Right: FAQ Content -->
+        <div class="col-lg-7 col-md-6">
+          <div class="content-block">
+            <h2 class="faq-title">Frequently<br>Asked Questions</h2>
+            <p class="faq-subtitle">We have professional experts around world.</p>
 
+            <div class="accordion faq-accordion" id="faqAccordion">
 
-<!-- client -->
- <section class="trusted-section">
-  <div class="trusted-inner">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#q1" aria-expanded="false">
+                    <span>Am I a good candidate for plastic surgery?</span>
+                    <span class="acc-icon">
+                      <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </span>
+                  </button>
+                </h2>
+                <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Good candidates are generally healthy individuals with realistic expectations. A thorough
+                    consultation with our board-certified surgeons will determine if surgery is right for you.
+                  </div>
+                </div>
+              </div>
 
-    <!-- Left: Rating -->
-    <div class="rating-block">
-      <p class="rating-label">Trusted and top rated tech team</p>
-      <div class="clutch-row">
-        <span class="clutch-name">Clutch</span>
-        <span class="clutch-score">4.9/5</span>
-        <div class="stars-wrap">
-          <div class="stars">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#q2" aria-expanded="false">
+                    <span>How do I prepare for surgery?</span>
+                    <span class="acc-icon">
+                      <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </span>
+                  </button>
+                </h2>
+                <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Preparation includes pre-operative blood work, stopping certain medications, and arranging for
+                    someone to drive you home and assist during recovery.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="h3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#q3" aria-expanded="false">
+                    <span>What is the difference between cosmetic and surgery?</span>
+                    <span class="acc-icon">
+                      <svg viewBox="0 0 24 24">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </span>
+                  </button>
+                </h2>
+                <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Cosmetic surgery enhances appearance, while reconstructive surgery restores form and function. Both
+                    are performed by plastic surgeons but serve different goals.
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <span class="review-count">1,24k client reviews</span>
         </div>
+
       </div>
     </div>
+  </section>
 
-    <!-- Divider -->
-    <div class="divider"></div>
 
-    <!-- Logos — scroll-driven -->
-    <div class="marquee-outer">
-      <div class="marquee-track" id="marqueeTrack">
+  <!-- client -->
+  <section class="trusted-section">
+    <div class="trusted-inner">
 
-        <!-- Logo 1 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="16" stroke="#0a1a0a" stroke-width="2" fill="none"/>
-              <ellipse cx="20" cy="20" rx="7" ry="16" stroke="#0a1a0a" stroke-width="1.5" fill="none"/>
-              <line x1="4" y1="20" x2="36" y2="20" stroke="#0a1a0a" stroke-width="1.5"/>
-              <line x1="6" y1="13" x2="34" y2="13" stroke="#0a1a0a" stroke-width="1.2"/>
-              <line x1="6" y1="27" x2="34" y2="27" stroke="#0a1a0a" stroke-width="1.2"/>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="main" style="font-size:0.85rem;font-weight:800;">Logoipsum</span>
-              <span class="sub">Brand Standard</span>
+      <!-- Left: Rating -->
+      <div class="rating-block">
+        <p class="rating-label">Trusted and top rated tech team</p>
+        <div class="clutch-row">
+          <span class="clutch-name">Clutch</span>
+          <span class="clutch-score">4.9/5</span>
+          <div class="stars-wrap">
+            <div class="stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <span class="review-count">1,24k client reviews</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Logos — scroll-driven -->
+      <div class="marquee-outer">
+        <div class="marquee-track" id="marqueeTrack">
+
+          <!-- Logo 1 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="16" stroke="#0a1a0a" stroke-width="2" fill="none" />
+                <ellipse cx="20" cy="20" rx="7" ry="16" stroke="#0a1a0a" stroke-width="1.5" fill="none" />
+                <line x1="4" y1="20" x2="36" y2="20" stroke="#0a1a0a" stroke-width="1.5" />
+                <line x1="6" y1="13" x2="34" y2="13" stroke="#0a1a0a" stroke-width="1.2" />
+                <line x1="6" y1="27" x2="34" y2="27" stroke="#0a1a0a" stroke-width="1.2" />
+              </svg>
+              <div class="logo-wordmark">
+                <span class="main" style="font-size:0.85rem;font-weight:800;">Logoipsum</span>
+                <span class="sub">Brand Standard</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 2 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="17" stroke="#0a1a0a" stroke-width="2.5" fill="none"/>
-              <circle cx="20" cy="20" r="10" stroke="#0a1a0a" stroke-width="1.8" fill="none"/>
-              <line x1="3" y1="20" x2="37" y2="20" stroke="#0a1a0a" stroke-width="1.8"/>
-              <line x1="20" y1="3" x2="20" y2="37" stroke="#0a1a0a" stroke-width="1.8"/>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="main">logo–</span>
-              <span class="main">ipsum<sup style="font-size:0.5rem;">™</sup></span>
+          <!-- Logo 2 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="17" stroke="#0a1a0a" stroke-width="2.5" fill="none" />
+                <circle cx="20" cy="20" r="10" stroke="#0a1a0a" stroke-width="1.8" fill="none" />
+                <line x1="3" y1="20" x2="37" y2="20" stroke="#0a1a0a" stroke-width="1.8" />
+                <line x1="20" y1="3" x2="20" y2="37" stroke="#0a1a0a" stroke-width="1.8" />
+              </svg>
+              <div class="logo-wordmark">
+                <span class="main">logo–</span>
+                <span class="main">ipsum<sup style="font-size:0.5rem;">™</sup></span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 3 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 52 28" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="0" width="20" height="20"/>
-              <circle cx="32" cy="10" r="10"/>
-              <circle cx="46" cy="10" r="10"/>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="main">logoipsum<sup style="font-size:0.5rem;">·</sup></span>
+          <!-- Logo 3 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 52 28" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="20" height="20" />
+                <circle cx="32" cy="10" r="10" />
+                <circle cx="46" cy="10" r="10" />
+              </svg>
+              <div class="logo-wordmark">
+                <span class="main">logoipsum<sup style="font-size:0.5rem;">·</sup></span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 4 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="36" height="36" rx="8" stroke="#0a1a0a" stroke-width="2.5" fill="none"/>
-              <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle"
-                font-family="Barlow,sans-serif" font-size="14" font-weight="900" fill="#0a1a0a">QC</text>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="sub" style="font-size:0.55rem;letter-spacing:0.12em;">POWER</span>
-              <span class="main" style="font-size:1.15rem;letter-spacing:-1px;">XR2</span>
-              <span class="sub" style="font-size:0.55rem;letter-spacing:0.12em;">MODULE</span>
+          <!-- Logo 4 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="36" height="36" rx="8" stroke="#0a1a0a" stroke-width="2.5" fill="none" />
+                <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Barlow,sans-serif"
+                  font-size="14" font-weight="900" fill="#0a1a0a">QC</text>
+              </svg>
+              <div class="logo-wordmark">
+                <span class="sub" style="font-size:0.55rem;letter-spacing:0.12em;">POWER</span>
+                <span class="main" style="font-size:1.15rem;letter-spacing:-1px;">XR2</span>
+                <span class="sub" style="font-size:0.55rem;letter-spacing:0.12em;">MODULE</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 5 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 34 C6 28,4 22,6 16 C8 12,11 10,11 10 C11 14,10 18,12 22 C13 26,10 30,10 34Z" fill="#0a1a0a"/>
-              <path d="M34 34 C38 28,40 22,38 16 C36 12,33 10,33 10 C33 14,34 18,32 22 C31 26,34 30,34 34Z" fill="#0a1a0a"/>
-              <text x="50%" y="78%" dominant-baseline="middle" text-anchor="middle"
-                font-size="6" fill="#0a1a0a">★★★★★</text>
-            </svg>
-            <div class="logo-wordmark" style="text-align:center;">
-              <span class="sub" style="font-size:0.7rem;font-weight:900;letter-spacing:0.05em;">ULTRA</span>
-              <span class="sub" style="font-size:0.48rem;">PRESTIGIOUS</span>
-              <span class="sub" style="font-size:0.42rem;">BEST OF THE WORLD</span>
-              <span class="sub" style="font-size:0.58rem;font-weight:700;">WINNER</span>
+          <!-- Logo 5 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 34 C6 28,4 22,6 16 C8 12,11 10,11 10 C11 14,10 18,12 22 C13 26,10 30,10 34Z"
+                  fill="#0a1a0a" />
+                <path d="M34 34 C38 28,40 22,38 16 C36 12,33 10,33 10 C33 14,34 18,32 22 C31 26,34 30,34 34Z"
+                  fill="#0a1a0a" />
+                <text x="50%" y="78%" dominant-baseline="middle" text-anchor="middle" font-size="6"
+                  fill="#0a1a0a">★★★★★</text>
+              </svg>
+              <div class="logo-wordmark" style="text-align:center;">
+                <span class="sub" style="font-size:0.7rem;font-weight:900;letter-spacing:0.05em;">ULTRA</span>
+                <span class="sub" style="font-size:0.48rem;">PRESTIGIOUS</span>
+                <span class="sub" style="font-size:0.42rem;">BEST OF THE WORLD</span>
+                <span class="sub" style="font-size:0.58rem;font-weight:700;">WINNER</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 6 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="16" fill="#0a1a0a"/>
-              <line x1="8" y1="14" x2="32" y2="14" stroke="#4cde5a" stroke-width="1.8"/>
-              <line x1="6" y1="18" x2="34" y2="18" stroke="#4cde5a" stroke-width="1.8"/>
-              <line x1="8" y1="22" x2="32" y2="22" stroke="#4cde5a" stroke-width="1.8"/>
-              <line x1="10" y1="26" x2="30" y2="26" stroke="#4cde5a" stroke-width="1.8"/>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="main">Logoipsum</span>
-              <span class="sub">Brand Standard</span>
+          <!-- Logo 6 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="16" fill="#0a1a0a" />
+                <line x1="8" y1="14" x2="32" y2="14" stroke="#4cde5a" stroke-width="1.8" />
+                <line x1="6" y1="18" x2="34" y2="18" stroke="#4cde5a" stroke-width="1.8" />
+                <line x1="8" y1="22" x2="32" y2="22" stroke="#4cde5a" stroke-width="1.8" />
+                <line x1="10" y1="26" x2="30" y2="26" stroke="#4cde5a" stroke-width="1.8" />
+              </svg>
+              <div class="logo-wordmark">
+                <span class="main">Logoipsum</span>
+                <span class="sub">Brand Standard</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 7 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 40 40" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="20,2 38,20 20,38 2,20"/>
-            </svg>
-            <div class="logo-wordmark">
-              <span class="main">logo–</span>
-              <span class="main">ipsum<sup style="font-size:0.5rem;">™</sup></span>
+          <!-- Logo 7 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 40 40" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="20,2 38,20 20,38 2,20" />
+              </svg>
+              <div class="logo-wordmark">
+                <span class="main">logo–</span>
+                <span class="main">ipsum<sup style="font-size:0.5rem;">™</sup></span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Logo 8 -->
-        <div class="logo-item">
-          <div class="logo-text-wrap">
-            <svg class="logo-icon" viewBox="0 0 60 24" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
-              <rect x="0" y="2" width="18" height="18" rx="0"/>
-              <circle cx="37" cy="11" r="9"/>
-              <circle cx="52" cy="11" r="9"/>
-            </svg>
+          <!-- Logo 8 -->
+          <div class="logo-item">
+            <div class="logo-text-wrap">
+              <svg class="logo-icon" viewBox="0 0 60 24" fill="#0a1a0a" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="2" width="18" height="18" rx="0" />
+                <circle cx="37" cy="11" r="9" />
+                <circle cx="52" cy="11" r="9" />
+              </svg>
+            </div>
           </div>
-        </div>
 
-      </div><!-- /marquee-track -->
-    </div><!-- /marquee-outer -->
+        </div><!-- /marquee-track -->
+      </div><!-- /marquee-outer -->
 
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- Scroll hint for demo -->
+  <!-- Scroll hint for demo -->
 
 
 
@@ -1236,142 +1289,142 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-        const isMobile = () => window.innerWidth <= 900;
+    const isMobile = () => window.innerWidth <= 900;
 
-        // ── Desktop horizontal scroll ──
-        function initDesktop() {
-            const track = document.getElementById('cardsTrack');
-            const outer = document.getElementById('stickyOuter');
-            const fill = document.getElementById('progressFill');
-            const count = document.getElementById('progressCount');
-            const cards = track.querySelectorAll('.card');
+    // ── Desktop horizontal scroll ──
+    function initDesktop() {
+      const track = document.getElementById('cardsTrack');
+      const outer = document.getElementById('stickyOuter');
+      const fill = document.getElementById('progressFill');
+      const count = document.getElementById('progressCount');
+      const cards = track.querySelectorAll('.card');
 
-            const getScrollAmount = () => {
-                const trackW = track.scrollWidth;
-                const viewW = track.parentElement.offsetWidth;
-                return -(trackW - viewW + 60);
-            };
+      const getScrollAmount = () => {
+        const trackW = track.scrollWidth;
+        const viewW = track.parentElement.offsetWidth;
+        return -(trackW - viewW + 60);
+      };
 
-            ScrollTrigger.create({
-                trigger: outer,
-                start: 'top top',
-                end: () => `+=${Math.abs(getScrollAmount()) + window.innerHeight * 0.5}`,
-                pin: '#stickyPin',
-                scrub: 1,
-                anticipatePin: 1,
-                onUpdate: self => {
-                    const prog = self.progress;
-                    gsap.set(track, { x: getScrollAmount() * prog });
-                    fill.style.width = (prog * 100) + '%';
-                    const cardIdx = Math.min(Math.floor(prog * 6), 5);
-                    count.textContent = `0${cardIdx + 1} / 06`;
-                },
-                invalidateOnRefresh: true
-            });
+      ScrollTrigger.create({
+        trigger: outer,
+        start: 'top top',
+        end: () => `+=${Math.abs(getScrollAmount()) + window.innerHeight * 0.5}`,
+        pin: '#stickyPin',
+        scrub: 1,
+        anticipatePin: 1,
+        onUpdate: self => {
+          const prog = self.progress;
+          gsap.set(track, { x: getScrollAmount() * prog });
+          fill.style.width = (prog * 100) + '%';
+          const cardIdx = Math.min(Math.floor(prog * 6), 5);
+          count.textContent = `0${cardIdx + 1} / 06`;
+        },
+        invalidateOnRefresh: true
+      });
 
-            gsap.from(cards, {
-                scrollTrigger: {
-                    trigger: outer,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none'
-                },
-                y: 60, opacity: 0, stagger: 0.08, duration: 0.9, ease: 'power3.out'
-            });
+      gsap.from(cards, {
+        scrollTrigger: {
+          trigger: outer,
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        y: 60, opacity: 0, stagger: 0.08, duration: 0.9, ease: 'power3.out'
+      });
 
-            window.addEventListener('resize', () => ScrollTrigger.refresh());
-        }
+      window.addEventListener('resize', () => ScrollTrigger.refresh());
+    }
 
-        // ── Mobile slider ──
-        function initMobile() {
-            const viewport = document.querySelector('.cards-viewport');
-            const cards = document.querySelectorAll('.card');
-            const dots = document.querySelectorAll('.mobile-dot');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const countEl = document.getElementById('mobileCount');
-            const fillEl = document.getElementById('progressFill');
-            let current = 0;
-            const total = cards.length;
+    // ── Mobile slider ──
+    function initMobile() {
+      const viewport = document.querySelector('.cards-viewport');
+      const cards = document.querySelectorAll('.card');
+      const dots = document.querySelectorAll('.mobile-dot');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const countEl = document.getElementById('mobileCount');
+      const fillEl = document.getElementById('progressFill');
+      let current = 0;
+      const total = cards.length;
 
-            function getCardWidth() {
-                return cards[0].offsetWidth + 14;
-            }
+      function getCardWidth() {
+        return cards[0].offsetWidth + 14;
+      }
 
-            function goTo(idx) {
-                idx = Math.max(0, Math.min(total - 1, idx));
-                current = idx;
-                viewport.scrollTo({ left: getCardWidth() * idx, behavior: 'smooth' });
-                updateUI();
-            }
+      function goTo(idx) {
+        idx = Math.max(0, Math.min(total - 1, idx));
+        current = idx;
+        viewport.scrollTo({ left: getCardWidth() * idx, behavior: 'smooth' });
+        updateUI();
+      }
 
-            function updateUI() {
-                dots.forEach((d, i) => d.classList.toggle('active', i === current));
-                countEl.textContent = `0${current + 1} / 0${total}`;
-                fillEl.style.width = ((current / (total - 1)) * 100) + '%';
-                prevBtn.classList.toggle('disabled', current === 0);
-                nextBtn.classList.toggle('disabled', current === total - 1);
-            }
+      function updateUI() {
+        dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        countEl.textContent = `0${current + 1} / 0${total}`;
+        fillEl.style.width = ((current / (total - 1)) * 100) + '%';
+        prevBtn.classList.toggle('disabled', current === 0);
+        nextBtn.classList.toggle('disabled', current === total - 1);
+      }
 
-            dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
-            prevBtn.addEventListener('click', () => goTo(current - 1));
-            nextBtn.addEventListener('click', () => goTo(current + 1));
+      dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.idx)));
+      prevBtn.addEventListener('click', () => goTo(current - 1));
+      nextBtn.addEventListener('click', () => goTo(current + 1));
 
-            let scrollTimer;
-            viewport.addEventListener('scroll', () => {
-                clearTimeout(scrollTimer);
-                scrollTimer = setTimeout(() => {
-                    const w = getCardWidth();
-                    const idx = Math.round(viewport.scrollLeft / w);
-                    if (idx !== current) { current = idx; updateUI(); }
-                }, 80);
-            }, { passive: true });
+      let scrollTimer;
+      viewport.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(() => {
+          const w = getCardWidth();
+          const idx = Math.round(viewport.scrollLeft / w);
+          if (idx !== current) { current = idx; updateUI(); }
+        }, 80);
+      }, { passive: true });
 
-            let touchStartX = 0;
-            viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
-            viewport.addEventListener('touchend', e => {
-                const diff = touchStartX - e.changedTouches[0].clientX;
-                if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
-            }, { passive: true });
+      let touchStartX = 0;
+      viewport.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+      viewport.addEventListener('touchend', e => {
+        const diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+      }, { passive: true });
 
-            gsap.from(cards, {
-                y: 50, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power3.out', delay: 0.2
-            });
+      gsap.from(cards, {
+        y: 50, opacity: 0, stagger: 0.1, duration: 0.7, ease: 'power3.out', delay: 0.2
+      });
 
-            updateUI();
-        }
+      updateUI();
+    }
 
-        // ── Init based on viewport ──
-        if (isMobile()) {
-            // Mobile: vertical stack, just animate cards in
-            const cards = document.querySelectorAll('.card');
-            gsap.from(cards, {
-                y: 40, opacity: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out', delay: 0.1
-            });
-        } else {
-            initDesktop();
-        }
+    // ── Init based on viewport ──
+    if (isMobile()) {
+      // Mobile: vertical stack, just animate cards in
+      const cards = document.querySelectorAll('.card');
+      gsap.from(cards, {
+        y: 40, opacity: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out', delay: 0.1
+      });
+    } else {
+      initDesktop();
+    }
 
-        // ── Default cursor always visible on desktop ──
-        if (!isMobile()) {
-            // Cards should NOT hide the cursor - remove cursor:none from cards
-            document.querySelectorAll('.card').forEach(el => {
-                el.style.cursor = 'default';
-            });
-        }
+    // ── Default cursor always visible on desktop ──
+    if (!isMobile()) {
+      // Cards should NOT hide the cursor - remove cursor:none from cards
+      document.querySelectorAll('.card').forEach(el => {
+        el.style.cursor = 'default';
+      });
+    }
 
-  // service started
-document.addEventListener("DOMContentLoaded", () => {
+    // service started
+    document.addEventListener("DOMContentLoaded", () => {
       const cards = document.querySelectorAll('.service-card');
       const stickyText = document.getElementById('stickyText');
       const stickyEmoji = document.getElementById('stickyEmoji');
 
       let activeText = "SEO";
       const rightCards = Array.from(cards).slice(1);
-      
+
       window.addEventListener('scroll', () => {
         let newActiveText = "SEO";
         let newActiveEmoji = "🚀";
-        
+
         for (let i = rightCards.length - 1; i >= 0; i--) {
           const rect = rightCards[i].getBoundingClientRect();
           if (rect.top < window.innerHeight * 0.65) {
@@ -1380,16 +1433,16 @@ document.addEventListener("DOMContentLoaded", () => {
             break;
           }
         }
-        
+
         if (newActiveText !== activeText) {
           activeText = newActiveText;
           stickyText.style.opacity = '0';
           stickyEmoji.style.opacity = '0';
-          
+
           setTimeout(() => {
             stickyText.textContent = newActiveText;
             stickyEmoji.textContent = newActiveEmoji;
-            
+
             if (newActiveText.length > 4) {
               stickyText.style.fontSize = "clamp(4.5rem, 8vw, 7rem)";
             } else {
@@ -1402,11 +1455,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
-  // ended 
+    // ended 
 
-// started
+    // started
 
- gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
     const maskPath = document.querySelector("#maskPath");
     const maskLength = maskPath.getTotalLength();
@@ -1619,63 +1672,63 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-  // client
+    // client
 
 
     // ── Duplicate logos for seamless looping ──
-  const track = document.getElementById('marqueeTrack');
-  track.innerHTML += track.innerHTML;
+    const track = document.getElementById('marqueeTrack');
+    track.innerHTML += track.innerHTML;
 
-  // ── Scroll-driven marquee ──
-  const halfWidth = track.scrollWidth / 2;  // width of one set
-  let currentX   = 0;
-  let lastScroll  = window.scrollY;
-  let velocity    = 0;
-  let raf         = null;
+    // ── Scroll-driven marquee ──
+    const halfWidth = track.scrollWidth / 2;  // width of one set
+    let currentX = 0;
+    let lastScroll = window.scrollY;
+    let velocity = 0;
+    let raf = null;
 
-  // How many px the track moves per 1px of page scroll
-  const SCROLL_RATIO = 0.4;
+    // How many px the track moves per 1px of page scroll
+    const SCROLL_RATIO = 0.4;
 
-  function lerp(a, b, t) { return a + (b - a) * t; }
+    function lerp(a, b, t) { return a + (b - a) * t; }
 
-  function animate() {
-    // Smoothly ease currentX toward target
-    velocity = lerp(velocity, 0, 0.08);
-    currentX += velocity;
+    function animate() {
+      // Smoothly ease currentX toward target
+      velocity = lerp(velocity, 0, 0.08);
+      currentX += velocity;
 
-    // Wrap around seamlessly
-    if (currentX <= -halfWidth) currentX += halfWidth;
-    if (currentX >= 0)          currentX -= halfWidth;
+      // Wrap around seamlessly
+      if (currentX <= -halfWidth) currentX += halfWidth;
+      if (currentX >= 0) currentX -= halfWidth;
 
-    track.style.transform = `translateX(${currentX}px)`;
+      track.style.transform = `translateX(${currentX}px)`;
 
-    if (Math.abs(velocity) > 0.1) {
-      raf = requestAnimationFrame(animate);
-    } else {
-      raf = null;
+      if (Math.abs(velocity) > 0.1) {
+        raf = requestAnimationFrame(animate);
+      } else {
+        raf = null;
+      }
     }
-  }
 
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    const delta   = scrollY - lastScroll;   // positive = scrolling down
-    lastScroll    = scrollY;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const delta = scrollY - lastScroll;   // positive = scrolling down
+      lastScroll = scrollY;
 
-    // Add to velocity (scroll down → logos move left → negative X)
-    velocity += delta * SCROLL_RATIO * -1;
+      // Add to velocity (scroll down → logos move left → negative X)
+      velocity += delta * SCROLL_RATIO * -1;
 
-    if (!raf) {
-      raf = requestAnimationFrame(animate);
-    }
-  }, { passive: true });
+      if (!raf) {
+        raf = requestAnimationFrame(animate);
+      }
+    }, { passive: true });
 
-  // Also support mouse wheel for trackpad users
-  window.addEventListener('wheel', (e) => {
-    velocity += e.deltaY * SCROLL_RATIO * -0.2;
-    if (!raf) {
-      raf = requestAnimationFrame(animate);
-    }
-  }, { passive: true });
+    // Also support mouse wheel for trackpad users
+    window.addEventListener('wheel', (e) => {
+      velocity += e.deltaY * SCROLL_RATIO * -0.2;
+      if (!raf) {
+        raf = requestAnimationFrame(animate);
+      }
+    }, { passive: true });
 
 
 
