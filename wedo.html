@@ -34,7 +34,7 @@
             flex: 1;
             display: flex;
             align-items: center;
-            padding: 130px 0 80px 0;
+
             z-index: 1;
         }
 
@@ -477,6 +477,39 @@
         }
 
 
+        /* ──── Video Section ──── */
+        .video-section {
+            padding: 60px 0 120px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: #000;
+        }
+
+        /* 16:9 Aspect ratio hack */
+        .video-wrapper::before {
+            content: '';
+            display: block;
+            padding-top: 56.25%;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         /* ──── Responsive Adjustments ──── */
         @media (max-width: 991px) {
             .custom-navbar {
@@ -787,6 +820,19 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <!-- Replace 'src' with your actual video or image path -->
+                <video autoplay loop muted playsinline>
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </section>
