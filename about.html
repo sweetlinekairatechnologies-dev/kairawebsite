@@ -63,6 +63,121 @@
 
   </nav>
 
+  <!-- ══════════ FULLSCREEN MENU OVERLAY ══════════ -->
+  <div class="fs-menu-overlay" id="fsMenu">
+    <div class="fs-menu-container">
+
+      <!-- Close Button -->
+      <button class="fs-close-btn" id="fsCloseBtn" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="fs-menu-content">
+        <!-- Left Side: Contact Info -->
+        <div class="fs-menu-left">
+          <div class="fs-contact-row">
+            <div class="fs-contact-col">
+              <h4>Send a message</h4>
+              <a href="mailto:hello@example.com">hello@example.com</a>
+              <a href="mailto:info@example.com">info@example.com</a>
+            </div>
+            <div class="fs-contact-col">
+              <h4>Call us</h4>
+              <a href="tel:+12345678910">+1 234 567 8910</a>
+              <a href="tel:+19876543210">+1 987 654 3210</a>
+            </div>
+          </div>
+          <div class="fs-contact-row" style="margin-top: 50px;">
+            <div class="fs-contact-col">
+              <h4>Visit Us</h4>
+              <p>Chicago HQ Estica Cop. Macomb, MI 48042</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Links -->
+        <div class="fs-menu-right">
+          <nav class="fs-nav-links">
+            <a href="#" class="fs-link">Home</a>
+            <div class="fs-link-dropdown">
+              <a href="#" class="fs-link">Pages</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <div class="fs-link-dropdown">
+              <a href="#" class="fs-link">Team</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <div class="fs-link-dropdown">
+              <a href="#" class="fs-link">Portfolio</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <div class="fs-link-dropdown">
+              <a href="#" class="fs-link">Service</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <div class="fs-link-dropdown">
+              <a href="#" class="fs-link active">Blog</a>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </div>
+            <a href="#" class="fs-link">Let's talk</a>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="fs-menu-bottom">
+        <div class="fs-theme-toggle">
+          <button class="theme-btn dark-mode active" aria-label="Dark Mode">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button class="theme-btn light-mode" aria-label="Light Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="fs-social-links">
+          <a href="#">FB</a>
+          <a href="#">X</a>
+          <a href="#">IN</a>
+          <a href="#">LN</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <section class="hero" id="hero">
 
     <!-- ── Wavy decorators ── -->
@@ -1739,7 +1854,32 @@
 
 
 
-  </script>
+    // ── Fullscreen Menu Toggle ──
+    const menuBtn = document.querySelector('.logo-pill');
+    const mobileMenuBtn = document.querySelector('.nav-mobile-toggle');
+    const closeBtn = document.getElementById('fsCloseBtn');
+    const fsMenu = document.getElementById('fsMenu');
+
+    function openMenu() {
+      if (fsMenu) fsMenu.classList.add('open');
+    }
+
+    function closeMenu() {
+      if (fsMenu) fsMenu.classList.remove('open');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Also close menu when a navigation link is clicked
+    const fsLinks = document.querySelectorAll('.fs-link');
+    fsLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        closeMenu();
+      });
+    });
+
   </script>
 
 
